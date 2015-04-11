@@ -13,7 +13,7 @@
 
 import Foundation
 
-class Metabolizer  {
+class Metabolizer: DamperObject {
 	
 
 	var amountOfOxygen:Double
@@ -26,7 +26,7 @@ class Metabolizer  {
 	var	bicarbonateContent:Double
 	var	pH:Double
 	
-	init(){
+	override init(){
 		(amountOfOxygen, pO2,oxygenContent,oxygenSaturation,amountOfCO2,pCO2,carbonDioxideContent,bicarbonateContent,pH) = (0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0)
 	}
 	
@@ -40,7 +40,7 @@ class Metabolizer  {
 	// hematocrit, hemoglobin and DPG.  Since these values are usually normal I have provided default values
 	// but these can be overridden if the developer allows these parameters to be changed by the user.
 	
-	func calculateContents(pH:Double,temperature:Double = 37.0,DPG:Double = 3.7843,
+	func calculateContents(temperature:Double = 37.0,DPG:Double = 3.7843,
 		Hct:Double = 45.0, Hgb:Double = 14.8){
 			
 			// Series of constants needed for the Kelman equations
