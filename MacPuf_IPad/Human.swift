@@ -25,6 +25,6 @@ class Human: DamperObject{
 	
 	func dummy(){
 			arteries.effluentCO2Content = 99
-		println("Value of resting cardiac output is \(heart.restingCardiacOutput)")
+		print("Value of resting cardiac output is \(heart.restingCardiacOutput)")
 	}
 }
