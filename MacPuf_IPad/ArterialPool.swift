@@ -118,13 +118,13 @@ class ArterialPool: Metabolizer{
 					pCO2 = 0.1;
 				}
 				
-				calculateContents(temperature:temperature, DPG:DPG, Hct:Hct, Hgb:Hgb)
+				calculateContents(temperature, DPG:DPG, Hct:Hct, Hgb:Hgb)
 				
 				// Calculate the delta, but must be non-zero or we will get division by zero error later
 				deltaOxygen1 = deltaOxygen2
 				deltaOxygen2 = (trialO2Content - oxygenContent) == 0 ?  0.001 : trialO2Content - oxygenContent
 				
-				deltaCarbonDioxide1 - deltaCarbonDioxide2
+				deltaCarbonDioxide1 = deltaCarbonDioxide2
 				deltaCarbonDioxide2 = (trialCO2Content - carbonDioxideContent) == 0 ? 0.001 : trialCO2Content - carbonDioxideContent
 				
 				guessOxygen1 = guessOxygen2

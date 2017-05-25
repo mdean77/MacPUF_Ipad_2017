@@ -28,7 +28,7 @@ class Metabolizer: DamperObject {
 	}
 	
 	// sign(f,g) = sgn(g) * abs(f)
-	func sign(op1:Double, op2:Double) -> Double {
+	func sign(_ op1:Double, op2:Double) -> Double {
 		return op2 < 0 ? -abs(op1) : abs(op1)
 	}
 	
@@ -142,7 +142,7 @@ class ArterialPool: Metabolizer{
 			var pO2 = pO2initial		//set initial estimate as what was fed in from MacPuf
 			var pCO2 = pCO2initial	//set initial estimate as what was fed in from MacPuf
 			
-			do {
+			repeat {
 				// Do the first estimation by calling calculateContents with these initial guesses
 				calculateContents(temperature:temperature, DPG:DPG, Hct:Hct, Hgb:Hgb)
 				
@@ -337,7 +337,7 @@ class Human: DamperObject{
 	
 	func dummy(){
 		arteries.effluentCO2Content = 99
-		println("Value of resting cardiac output is \(heart.restingCardiacOutput)")
+		print("Value of resting cardiac output is \(heart.restingCardiacOutput)")
 	}
 }
 
@@ -351,4 +351,4 @@ human.heart.pO2
 human.arteries.pO2
 human.heart.pO2
 human.arteries.oxygenContent = 20
-human.arteries.calculatePressures(oxygenContent:arteries.oxygenContent, carbonDioxideContent: carbonDioxideContent, pO2initial: 0, pCO2initial: 0, pH: 7.4, temperature: 37, DPG: 3.7842, Hct: 45, Hgb: 14.8)
+//human.arteries.calculatePressures(oxygenContent:oxygenContent, carbonDioxideContent:carbonDioxideContent, pO2initial: 0, pCO2initial: 0, pH: 7.4, temperature: 37, DPG: 3.7842, Hct: 45, Hgb: 14.8)
