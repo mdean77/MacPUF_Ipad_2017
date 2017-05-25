@@ -21,6 +21,7 @@
 		ACAA9F6B1AD6A9E8003390CA /* Metabolizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA9F6A1AD6A9E8003390CA /* Metabolizer.swift */; };
 		ACAA9F701AD6AAF1003390CA /* MacPuffBook.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ACAA9F6F1AD6AAF1003390CA /* MacPuffBook.pdf */; };
 		ACAA9F741AD6ADBD003390CA /* ArterialPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA9F731AD6ADBD003390CA /* ArterialPool.swift */; };
+		ACEC411E1ADB22C0004CE8FD /* libMacPufFrameworks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEC41131ADB22C0004CE8FD /* libMacPufFrameworks.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +32,26 @@
 			remoteGlobalIDString = AC484DAD1AD6A67E009EB609;
 			remoteInfo = MacPuf_IPad;
 		};
+		ACEC411F1ADB22C0004CE8FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC484DA61AD6A67E009EB609 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ACEC41121ADB22C0004CE8FD;
+			remoteInfo = MacPufFrameworks;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ACEC41111ADB22C0004CE8FD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AC484DAE1AD6A67E009EB609 /* MacPuf_IPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacPuf_IPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +122,8 @@
 		ACAA9F6F1AD6AAF1003390CA /* MacPuffBook.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = MacPuffBook.pdf; sourceTree = "<group>"; };
 		ACAA9F731AD6ADBD003390CA /* ArterialPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArterialPool.swift; sourceTree = "<group>"; };
 		ACEC410D1AD9DB99004CE8FD /* MacPufPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MacPufPlayground.playground; sourceTree = "<group>"; };
+		ACEC41131ADB22C0004CE8FD /* libMacPufFrameworks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMacPufFrameworks.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACEC411D1ADB22C0004CE8FD /* MacPufFrameworksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacPufFrameworksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +138,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACEC41101ADB22C0004CE8FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACEC411A1ADB22C0004CE8FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACEC411E1ADB22C0004CE8FD /* libMacPufFrameworks.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +177,8 @@
 			children = (
 				AC484DAE1AD6A67E009EB609 /* MacPuf_IPad.app */,
 				AC484DC31AD6A67E009EB609 /* MacPuf_IPadTests.xctest */,
+				ACEC41131ADB22C0004CE8FD /* libMacPufFrameworks.a */,
+				ACEC411D1ADB22C0004CE8FD /* MacPufFrameworksTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,11 +194,11 @@
 				ACAA9F6A1AD6A9E8003390CA /* Metabolizer.swift */,
 				AC484DB31AD6A67E009EB609 /* AppDelegate.swift */,
 				AC484DB51AD6A67E009EB609 /* ViewController.swift */,
+				AC6481F21AD98718004FD214 /* DamperObject.swift */,
 				AC484DB71AD6A67E009EB609 /* Main.storyboard */,
 				AC484DBA1AD6A67E009EB609 /* Images.xcassets */,
 				AC484DBC1AD6A67E009EB609 /* LaunchScreen.xib */,
 				AC484DB11AD6A67E009EB609 /* Supporting Files */,
-				AC6481F21AD98718004FD214 /* DamperObject.swift */,
 			);
 			path = MacPuf_IPad;
 			sourceTree = "<group>";
@@ -298,6 +337,41 @@
 			productReference = AC484DC31AD6A67E009EB609 /* MacPuf_IPadTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		ACEC41121ADB22C0004CE8FD /* MacPufFrameworks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACEC41241ADB22C0004CE8FD /* Build configuration list for PBXNativeTarget "MacPufFrameworks" */;
+			buildPhases = (
+				ACEC410F1ADB22C0004CE8FD /* Sources */,
+				ACEC41101ADB22C0004CE8FD /* Frameworks */,
+				ACEC41111ADB22C0004CE8FD /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacPufFrameworks;
+			productName = MacPufFrameworks;
+			productReference = ACEC41131ADB22C0004CE8FD /* libMacPufFrameworks.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		ACEC411C1ADB22C0004CE8FD /* MacPufFrameworksTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACEC41271ADB22C0004CE8FD /* Build configuration list for PBXNativeTarget "MacPufFrameworksTests" */;
+			buildPhases = (
+				ACEC41191ADB22C0004CE8FD /* Sources */,
+				ACEC411A1ADB22C0004CE8FD /* Frameworks */,
+				ACEC411B1ADB22C0004CE8FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ACEC41201ADB22C0004CE8FD /* PBXTargetDependency */,
+			);
+			name = MacPufFrameworksTests;
+			productName = MacPufFrameworksTests;
+			productReference = ACEC411D1ADB22C0004CE8FD /* MacPufFrameworksTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -309,10 +383,18 @@
 				TargetAttributes = {
 					AC484DAD1AD6A67E009EB609 = {
 						CreatedOnToolsVersion = 6.3;
+						LastSwiftMigration = 0830;
 					};
 					AC484DC21AD6A67E009EB609 = {
 						CreatedOnToolsVersion = 6.3;
+						LastSwiftMigration = 0830;
 						TestTargetID = AC484DAD1AD6A67E009EB609;
+					};
+					ACEC41121ADB22C0004CE8FD = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					ACEC411C1ADB22C0004CE8FD = {
+						CreatedOnToolsVersion = 6.3;
 					};
 				};
 			};
@@ -331,6 +413,8 @@
 			targets = (
 				AC484DAD1AD6A67E009EB609 /* MacPuf_IPad */,
 				AC484DC21AD6A67E009EB609 /* MacPuf_IPadTests */,
+				ACEC41121ADB22C0004CE8FD /* MacPufFrameworks */,
+				ACEC411C1ADB22C0004CE8FD /* MacPufFrameworksTests */,
 			);
 		};
 /* End PBXProject section */
@@ -348,6 +432,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AC484DC11AD6A67E009EB609 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACEC411B1ADB22C0004CE8FD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -381,6 +472,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ACEC410F1ADB22C0004CE8FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACEC41191ADB22C0004CE8FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -388,6 +493,11 @@
 			isa = PBXTargetDependency;
 			target = AC484DAD1AD6A67E009EB609 /* MacPuf_IPad */;
 			targetProxy = AC484DC41AD6A67E009EB609 /* PBXContainerItemProxy */;
+		};
+		ACEC41201ADB22C0004CE8FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ACEC41121ADB22C0004CE8FD /* MacPufFrameworks */;
+			targetProxy = ACEC411F1ADB22C0004CE8FD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -501,6 +611,7 @@
 				INFOPLIST_FILE = MacPuf_IPad/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -511,6 +622,7 @@
 				INFOPLIST_FILE = MacPuf_IPad/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -529,6 +641,7 @@
 				INFOPLIST_FILE = MacPuf_IPadTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacPuf_IPad.app/MacPuf_IPad";
 			};
 			name = Debug;
@@ -544,7 +657,60 @@
 				INFOPLIST_FILE = MacPuf_IPadTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacPuf_IPad.app/MacPuf_IPad";
+			};
+			name = Release;
+		};
+		ACEC41251ADB22C0004CE8FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		ACEC41261ADB22C0004CE8FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		ACEC41281ADB22C0004CE8FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MacPufFrameworksTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		ACEC41291ADB22C0004CE8FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MacPufFrameworksTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -574,6 +740,24 @@
 			buildConfigurations = (
 				AC484DD11AD6A67E009EB609 /* Debug */,
 				AC484DD21AD6A67E009EB609 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACEC41241ADB22C0004CE8FD /* Build configuration list for PBXNativeTarget "MacPufFrameworks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACEC41251ADB22C0004CE8FD /* Debug */,
+				ACEC41261ADB22C0004CE8FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACEC41271ADB22C0004CE8FD /* Build configuration list for PBXNativeTarget "MacPufFrameworksTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACEC41281ADB22C0004CE8FD /* Debug */,
+				ACEC41291ADB22C0004CE8FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

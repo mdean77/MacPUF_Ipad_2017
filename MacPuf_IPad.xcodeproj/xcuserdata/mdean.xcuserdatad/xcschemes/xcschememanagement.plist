@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>MacPufFrameworks.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>MacPuf_IPad.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,16 @@
 			<true/>
 		</dict>
 		<key>AC484DC21AD6A67E009EB609</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ACEC41121ADB22C0004CE8FD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ACEC411C1ADB22C0004CE8FD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -12,7 +12,7 @@ import Foundation
 
 class DamperObject {
 	
-	func dampChange(newValue:Double, oldValue:Double, dampConstant:Double) -> Double {
+	func dampChange(_ newValue:Double, oldValue:Double, dampConstant:Double) -> Double {
 		return (newValue * dampConstant + oldValue)/(dampConstant + 1)
 	}
 	

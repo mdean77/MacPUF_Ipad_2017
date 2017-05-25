@@ -42,7 +42,7 @@ class ArterialPool: Metabolizer{
 	// successive approximation it iterates to the respective partial pressures.  I am using exactly the same logic
 	// as the original version but have tried to make it clear how it works.
 	
-	func calculatePressures(oxygenContent:Double, carbonDioxideContent:Double, pO2initial:Double,
+	func calculatePressures(_ oxygenContent:Double, carbonDioxideContent:Double, pO2initial:Double,
 		pCO2initial:Double, pH:Double, temperature:Double = 37.0, DPG:Double = 3.7842, Hct:Double = 45.0,
 		Hgb: Double = 14.8){
 			
@@ -65,7 +65,7 @@ class ArterialPool: Metabolizer{
 			var pO2 = pO2initial		//set initial estimate as what was fed in from MacPuf
 			var pCO2 = pCO2initial	//set initial estimate as what was fed in from MacPuf
 			
-			do {
+			repeat {
 				// Do the first estimation by calling calculateContents with these initial guesses
 				calculateContents(temperature:temperature, DPG:DPG, Hct:Hct, Hgb:Hgb)
 				

@@ -16,7 +16,7 @@ class Bag {
 	var carbonDioxide:Double = 0.0		// MacPuf variable BAGC  Factor 38
 	var oxygen:Double = 0.0						// MacPuf variable BAGO  Factor 37
 	
-	func setupWithVolume(volume:Double, carbonDioxide:Double, oxygen:Double){
+	func setupWithVolume(_ volume:Double, carbonDioxide:Double, oxygen:Double){
 		self.volume = volume
 		self.carbonDioxide = carbonDioxide
 		self.oxygen = oxygen

@@ -31,7 +31,7 @@ class Metabolizer: DamperObject {
 	}
 	
 	// sign(f,g) = sgn(g) * abs(f)
-	func sign(op1:Double, op2:Double) -> Double {
+	func sign(_ op1:Double, op2:Double) -> Double {
 		return op2 < 0 ? -abs(op1) : abs(op1)
 	}
 	
@@ -40,7 +40,7 @@ class Metabolizer: DamperObject {
 	// hematocrit, hemoglobin and DPG.  Since these values are usually normal I have provided default values
 	// but these can be overridden if the developer allows these parameters to be changed by the user.
 	
-	func calculateContents(temperature:Double = 37.0,DPG:Double = 3.7843,
+	func calculateContents(_ temperature:Double = 37.0,DPG:Double = 3.7843,
 		Hct:Double = 45.0, Hgb:Double = 14.8){
 			
 			// Series of constants needed for the Kelman equations
@@ -76,7 +76,7 @@ class Metabolizer: DamperObject {
 			cc = t * cp
 			h = Hct * 0.01
 			
-			var saturation = sat
+			let saturation = sat
 			var o2Content = Hgb*sat*1.34 + 0.003*pO2
 			o2Content = (o2Content < 0.001) ? 0.001 : o2Content
 			var co2Content = (cc*h+(1-h)*cp)*2.22
