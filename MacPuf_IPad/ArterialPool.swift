@@ -67,7 +67,7 @@ class ArterialPool: Metabolizer{
 			
 			repeat {
 				// Do the first estimation by calling calculateContents with these initial guesses
-				calculateContents(temperature:temperature, DPG:DPG, Hct:Hct, Hgb:Hgb)
+				calculateContents(temperature, DPG:DPG, Hct:Hct, Hgb:Hgb)
 				
 				// Calculate the delta, but must be non-zero or we will get division by zero error later
 				deltaOxygen2 = (trialO2Content - oxygenContent) == 0 ?  0.001 : trialO2Content - oxygenContent
