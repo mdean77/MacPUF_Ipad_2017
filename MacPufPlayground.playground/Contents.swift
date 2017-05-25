@@ -73,7 +73,7 @@ class Metabolizer: DamperObject {
 			cc = t * cp
 			h = Hct * 0.01
 			
-			var saturation = sat
+			let saturation = sat
 			var o2Content = Hgb*sat*1.34 + 0.003*pO2
 			o2Content = (o2Content < 0.001) ? 0.001 : o2Content
 			var co2Content = (cc*h+(1-h)*cp)*2.22
@@ -124,7 +124,7 @@ class ArterialPool: Metabolizer{
 		Hgb: Double = 14.8){
 			
 			let err = 0.01
-			var (trialO2Content, trialCO2Content) = (0.0, 0.0)
+			let (trialO2Content, trialCO2Content) = (0.0, 0.0)
 			var (deltaOxygen1, deltaOxygen2, deltaCarbonDioxide1, deltaCarbonDioxide2) = (0.0,0.0,0.0,0.0)
 			var (guessOxygen1, guessOxygen2, guessCarbonDioxide1, guessCarbonDioxide2) = (0.0,0.0,0.0,0.0)
 			
