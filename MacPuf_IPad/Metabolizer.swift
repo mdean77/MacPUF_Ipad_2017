@@ -27,7 +27,7 @@ class Metabolizer: DamperObject {
 	var	pH:Double
 	
 	override init(){
-		(amountOfOxygen, pO2,oxygenContent,oxygenSaturation,amountOfCO2,pCO2,carbonDioxideContent,bicarbonateContent,pH) = (0.0,95.0,0.0,0.0,0.0,40.0,0.0,0.0,7.4)
+		(amountOfOxygen, pO2,oxygenContent,oxygenSaturation,amountOfCO2,pCO2,carbonDioxideContent,bicarbonateContent,pH) = (0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0)
 	}
 	
 	// sign(f,g) = sgn(g) * abs(f)
