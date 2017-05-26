@@ -33,8 +33,8 @@ class Human: DamperObject{
     var DPH = 7.3996
     var RCOAJ = 100
     var XRESP = 8.8777
-    var veinDelay: [Double] = [0.0]
-    
+		var veinDelay = Array(repeating: 0.0, count: 40)
+	
     // Body systems of human
     let arteries: ArterialPool
 	let heart: Heart
@@ -66,17 +66,14 @@ class Human: DamperObject{
             veinDelay[i+19] = venousPool.bicarbonateContent
             veinDelay[i+29] = XC2PR
         }
-        
-        
-		
 	}
 	
-    func setIterations(_ newIterations:Int){
-        iterations = newIterations
-    }
-    
+	func setIterations(_ newIterations:Int){
+		iterations = newIterations
+	}
+	
 	func dummy(){
-			arteries.effluentCO2Content = 99
+		arteries.effluentCO2Content = 99
 		print("Value of resting cardiac output is \(heart.restingCardiacOutput)")
 	}
 }
