@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>MacPUFFramework.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>MacPufFrameworks.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -14,6 +19,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>MacPuf_IPadTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -23,6 +33,11 @@
 			<true/>
 		</dict>
 		<key>AC484DC21AD6A67E009EB609</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AC9A42AA1ED85D79006B8C7E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

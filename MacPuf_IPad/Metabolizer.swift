@@ -27,7 +27,7 @@ class Metabolizer: DamperObject {
 	var	pH:Double
 	
 	override init(){
-		(amountOfOxygen, pO2,oxygenContent,oxygenSaturation,amountOfCO2,pCO2,carbonDioxideContent,bicarbonateContent,pH) = (0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0)
+		(amountOfOxygen, pO2,oxygenContent,oxygenSaturation,amountOfCO2,pCO2,carbonDioxideContent,bicarbonateContent,pH) = (0.0,95.0,0.0,0.0,0.0,40.0,0.0,0.0,7.4)
 	}
 	
 	// sign(f,g) = sgn(g) * abs(f)
@@ -56,12 +56,11 @@ class Metabolizer: DamperObject {
 			var (dr, cp, cc, h, sat, a, b, c, dph) = (0.0, 0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0)
 			
 			// Original FORTRAN: X=PO2*10.**(.4*(PH-DPH)+.024*(37.-TEMP)+.026057699*(ALOG(40./PC2)))
-			
 			dph = 7.4 + (DPG - 3.8) * 0.25
 			dph = (dph > 7.58) ? 7.58 : dph
 			a = 0.4*(pH - dph)
 			b = 0.024*(37.0-temperature)
-			c = 0.026057699 * (log(40.0/pCO2))
+            c = 0.026057699 * (log(40.0/pCO2))
 			x = pO2*pow(10.0,(a + b + c ))
 			x = (x < 0.01) ? 0.01 : x   // Make sure x is at least greater than 0.01
 			sat = (x >= 10) ? (x*(x*(x*(x+a3)+a2)+a1))/(x*(x*(x*(x+a7)+a6)+a5)+a4) : (0.003683+0.000584*x)*x
