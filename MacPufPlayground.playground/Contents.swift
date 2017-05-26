@@ -45,3 +45,7 @@ mike.venousPool.pCO2
 mike.venousPool.pH
 mike.venousPool.pO2
 mike.venousPool.bicarbonateContent
+
+let macpuf = Simulator()
+macpuf.simulate()
+

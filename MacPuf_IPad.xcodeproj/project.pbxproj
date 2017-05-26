@@ -18,6 +18,8 @@
 		AC6481F11AD985D1004FD214 /* Human.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6481F01AD985D1004FD214 /* Human.swift */; };
 		AC6481F31AD98718004FD214 /* DamperObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6481F21AD98718004FD214 /* DamperObject.swift */; };
 		AC6481F51AD9B9CF004FD214 /* VenousPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6481F41AD9B9CF004FD214 /* VenousPool.swift */; };
+		AC6E746E1ED8DA86009C626C /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E746D1ED8DA86009C626C /* Simulator.swift */; };
+		AC6E746F1ED8DA86009C626C /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E746D1ED8DA86009C626C /* Simulator.swift */; };
 		AC9A42AF1ED85D79006B8C7E /* MacPUFFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = AC9A42AD1ED85D79006B8C7E /* MacPUFFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AC9A42B31ED85D87006B8C7E /* VenousPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6481F41AD9B9CF004FD214 /* VenousPool.swift */; };
 		AC9A42B41ED85D8B006B8C7E /* Human.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6481F01AD985D1004FD214 /* Human.swift */; };
@@ -77,6 +79,7 @@
 		AC6481F01AD985D1004FD214 /* Human.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Human.swift; sourceTree = "<group>"; };
 		AC6481F21AD98718004FD214 /* DamperObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DamperObject.swift; sourceTree = "<group>"; };
 		AC6481F41AD9B9CF004FD214 /* VenousPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenousPool.swift; sourceTree = "<group>"; };
+		AC6E746D1ED8DA86009C626C /* Simulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Simulator.swift; sourceTree = "<group>"; };
 		AC9A42AB1ED85D79006B8C7E /* MacPUFFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MacPUFFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC9A42AD1ED85D79006B8C7E /* MacPUFFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacPUFFramework.h; sourceTree = "<group>"; };
 		AC9A42AE1ED85D79006B8C7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -208,6 +211,7 @@
 			children = (
 				AC6481F41AD9B9CF004FD214 /* VenousPool.swift */,
 				AC6481F01AD985D1004FD214 /* Human.swift */,
+				AC6E746D1ED8DA86009C626C /* Simulator.swift */,
 				AC6481EE1AD97A01004FD214 /* Bag.swift */,
 				AC6481EA1AD83981004FD214 /* Heart.swift */,
 				ACAA9F731AD6ADBD003390CA /* ArterialPool.swift */,
@@ -528,6 +532,7 @@
 				AC6481EB1AD83981004FD214 /* Heart.swift in Sources */,
 				AC6481F51AD9B9CF004FD214 /* VenousPool.swift in Sources */,
 				AC484DB41AD6A67E009EB609 /* AppDelegate.swift in Sources */,
+				AC6E746E1ED8DA86009C626C /* Simulator.swift in Sources */,
 				AC6481F31AD98718004FD214 /* DamperObject.swift in Sources */,
 				AC6481EF1AD97A01004FD214 /* Bag.swift in Sources */,
 				ACAA9F741AD6ADBD003390CA /* ArterialPool.swift in Sources */,
@@ -548,6 +553,7 @@
 			files = (
 				AC9A42B81ED85D98006B8C7E /* Metabolizer.swift in Sources */,
 				AC9A42B31ED85D87006B8C7E /* VenousPool.swift in Sources */,
+				AC6E746F1ED8DA86009C626C /* Simulator.swift in Sources */,
 				AC9A42B91ED85DA3006B8C7E /* DamperObject.swift in Sources */,
 				AC9A42B71ED85D95006B8C7E /* ArterialPool.swift in Sources */,
 				AC9A42B51ED85D8F006B8C7E /* Bag.swift in Sources */,
@@ -897,6 +903,7 @@
 				AC9A42B11ED85D79006B8C7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ACEC41241ADB22C0004CE8FD /* Build configuration list for PBXNativeTarget "MacPufFrameworks" */ = {
 			isa = XCConfigurationList;
