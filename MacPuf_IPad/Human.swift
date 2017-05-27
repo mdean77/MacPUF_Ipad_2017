@@ -9,7 +9,7 @@
 import Foundation
 
 //  Note that Human is not a metabolizer object.  Only its component systems are metabolizers.
-class Human: DamperObject{
+class Human {
     // Simulation parameters
     var totalSeconds = 0
     var simlt = 1
@@ -45,7 +45,7 @@ class Human: DamperObject{
     //let ventilator:Ventilator
     //let lungs:Lung
 	
-	override init(){
+	init(){
 		arteries = ArterialPool()
 		heart = Heart()
 		bag = Bag()
@@ -66,6 +66,10 @@ class Human: DamperObject{
             veinDelay[i+19] = venousPool.bicarbonateContent
             veinDelay[i+29] = XC2PR
         }
+	}
+	
+	func dampChange(_ newValue:Double, oldValue:Double, dampConstant:Double) -> Double {
+		return (newValue * dampConstant + oldValue)/(dampConstant + 1)
 	}
 	
 	func setIterations(_ newIterations:Int){
