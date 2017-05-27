@@ -75,17 +75,9 @@ class Human {
 		iterations = newIterations
 	}
 	
-	
-	// This will dump the first six parameters - for convenience
-	func dumpParametersReport(){
-		print("Human dump parameters report")
-	}
-	
-	// This will eventually be the main simulation routine
+	// Main simulation routine
 	func simulate(_ cycle:Int){
-		
 		totalSeconds += 1
-		//print("Simulation cycle \(cycle)")
 	}
 	
 	
