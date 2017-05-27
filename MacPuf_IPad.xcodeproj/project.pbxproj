@@ -16,7 +16,6 @@
 		AC6481EB1AD83981004FD214 /* Heart.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6481EA1AD83981004FD214 /* Heart.swift */; };
 		AC6481EF1AD97A01004FD214 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6481EE1AD97A01004FD214 /* Bag.swift */; };
 		AC6481F11AD985D1004FD214 /* Human.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6481F01AD985D1004FD214 /* Human.swift */; };
-		AC6481F31AD98718004FD214 /* DamperObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6481F21AD98718004FD214 /* DamperObject.swift */; };
 		AC6481F51AD9B9CF004FD214 /* VenousPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6481F41AD9B9CF004FD214 /* VenousPool.swift */; };
 		AC6E746E1ED8DA86009C626C /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E746D1ED8DA86009C626C /* Simulator.swift */; };
 		AC6E746F1ED8DA86009C626C /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E746D1ED8DA86009C626C /* Simulator.swift */; };
@@ -27,7 +26,6 @@
 		AC9A42B61ED85D92006B8C7E /* Heart.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6481EA1AD83981004FD214 /* Heart.swift */; };
 		AC9A42B71ED85D95006B8C7E /* ArterialPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA9F731AD6ADBD003390CA /* ArterialPool.swift */; };
 		AC9A42B81ED85D98006B8C7E /* Metabolizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA9F6A1AD6A9E8003390CA /* Metabolizer.swift */; };
-		AC9A42B91ED85DA3006B8C7E /* DamperObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6481F21AD98718004FD214 /* DamperObject.swift */; };
 		ACAA9F6B1AD6A9E8003390CA /* Metabolizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA9F6A1AD6A9E8003390CA /* Metabolizer.swift */; };
 		ACAA9F701AD6AAF1003390CA /* MacPuffBook.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ACAA9F6F1AD6AAF1003390CA /* MacPuffBook.pdf */; };
 		ACAA9F741AD6ADBD003390CA /* ArterialPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA9F731AD6ADBD003390CA /* ArterialPool.swift */; };
@@ -77,7 +75,6 @@
 		AC6481EA1AD83981004FD214 /* Heart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Heart.swift; sourceTree = "<group>"; };
 		AC6481EE1AD97A01004FD214 /* Bag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bag.swift; path = ../Bag.swift; sourceTree = "<group>"; };
 		AC6481F01AD985D1004FD214 /* Human.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Human.swift; sourceTree = "<group>"; };
-		AC6481F21AD98718004FD214 /* DamperObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DamperObject.swift; sourceTree = "<group>"; };
 		AC6481F41AD9B9CF004FD214 /* VenousPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenousPool.swift; sourceTree = "<group>"; };
 		AC6E746D1ED8DA86009C626C /* Simulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Simulator.swift; sourceTree = "<group>"; };
 		AC9A42AB1ED85D79006B8C7E /* MacPUFFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MacPUFFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,7 +215,6 @@
 				ACAA9F6A1AD6A9E8003390CA /* Metabolizer.swift */,
 				AC484DB31AD6A67E009EB609 /* AppDelegate.swift */,
 				AC484DB51AD6A67E009EB609 /* ViewController.swift */,
-				AC6481F21AD98718004FD214 /* DamperObject.swift */,
 				AC484DB71AD6A67E009EB609 /* Main.storyboard */,
 				AC484DBA1AD6A67E009EB609 /* Images.xcassets */,
 				AC484DBC1AD6A67E009EB609 /* LaunchScreen.xib */,
@@ -533,7 +529,6 @@
 				AC6481F51AD9B9CF004FD214 /* VenousPool.swift in Sources */,
 				AC484DB41AD6A67E009EB609 /* AppDelegate.swift in Sources */,
 				AC6E746E1ED8DA86009C626C /* Simulator.swift in Sources */,
-				AC6481F31AD98718004FD214 /* DamperObject.swift in Sources */,
 				AC6481EF1AD97A01004FD214 /* Bag.swift in Sources */,
 				ACAA9F741AD6ADBD003390CA /* ArterialPool.swift in Sources */,
 			);
@@ -554,7 +549,6 @@
 				AC9A42B81ED85D98006B8C7E /* Metabolizer.swift in Sources */,
 				AC9A42B31ED85D87006B8C7E /* VenousPool.swift in Sources */,
 				AC6E746F1ED8DA86009C626C /* Simulator.swift in Sources */,
-				AC9A42B91ED85DA3006B8C7E /* DamperObject.swift in Sources */,
 				AC9A42B71ED85D95006B8C7E /* ArterialPool.swift in Sources */,
 				AC9A42B51ED85D8F006B8C7E /* Bag.swift in Sources */,
 				AC9A42B61ED85D92006B8C7E /* Heart.swift in Sources */,
