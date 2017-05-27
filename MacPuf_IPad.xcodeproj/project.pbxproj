@@ -29,6 +29,8 @@
 		ACAA9F6B1AD6A9E8003390CA /* Metabolizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA9F6A1AD6A9E8003390CA /* Metabolizer.swift */; };
 		ACAA9F701AD6AAF1003390CA /* MacPuffBook.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ACAA9F6F1AD6AAF1003390CA /* MacPuffBook.pdf */; };
 		ACAA9F741AD6ADBD003390CA /* ArterialPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA9F731AD6ADBD003390CA /* ArterialPool.swift */; };
+		ACC99DC81ED9F8B700FEE37F /* Lung.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC99DC71ED9F8B700FEE37F /* Lung.swift */; };
+		ACC99DC91ED9F8B700FEE37F /* Lung.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC99DC71ED9F8B700FEE37F /* Lung.swift */; };
 		ACEC411E1ADB22C0004CE8FD /* libMacPufFrameworks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEC41131ADB22C0004CE8FD /* libMacPufFrameworks.a */; };
 /* End PBXBuildFile section */
 
@@ -132,6 +134,7 @@
 		ACAA9F6D1AD6AA2C003390CA /* VARIABLES */ = {isa = PBXFileReference; lastKnownFileType = text; path = VARIABLES; sourceTree = "<group>"; };
 		ACAA9F6F1AD6AAF1003390CA /* MacPuffBook.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = MacPuffBook.pdf; sourceTree = "<group>"; };
 		ACAA9F731AD6ADBD003390CA /* ArterialPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArterialPool.swift; sourceTree = "<group>"; };
+		ACC99DC71ED9F8B700FEE37F /* Lung.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lung.swift; sourceTree = "<group>"; };
 		ACEC410D1AD9DB99004CE8FD /* MacPufPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MacPufPlayground.playground; sourceTree = "<group>"; };
 		ACEC41131ADB22C0004CE8FD /* libMacPufFrameworks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMacPufFrameworks.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACEC411D1ADB22C0004CE8FD /* MacPufFrameworksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacPufFrameworksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +209,7 @@
 		AC484DB01AD6A67E009EB609 /* MacPuf_IPad */ = {
 			isa = PBXGroup;
 			children = (
+				ACC99DC71ED9F8B700FEE37F /* Lung.swift */,
 				AC6481F41AD9B9CF004FD214 /* VenousPool.swift */,
 				AC6481F01AD985D1004FD214 /* Human.swift */,
 				AC6E746D1ED8DA86009C626C /* Simulator.swift */,
@@ -529,6 +533,7 @@
 				AC6481F51AD9B9CF004FD214 /* VenousPool.swift in Sources */,
 				AC484DB41AD6A67E009EB609 /* AppDelegate.swift in Sources */,
 				AC6E746E1ED8DA86009C626C /* Simulator.swift in Sources */,
+				ACC99DC81ED9F8B700FEE37F /* Lung.swift in Sources */,
 				AC6481EF1AD97A01004FD214 /* Bag.swift in Sources */,
 				ACAA9F741AD6ADBD003390CA /* ArterialPool.swift in Sources */,
 			);
@@ -549,6 +554,7 @@
 				AC9A42B81ED85D98006B8C7E /* Metabolizer.swift in Sources */,
 				AC9A42B31ED85D87006B8C7E /* VenousPool.swift in Sources */,
 				AC6E746F1ED8DA86009C626C /* Simulator.swift in Sources */,
+				ACC99DC91ED9F8B700FEE37F /* Lung.swift in Sources */,
 				AC9A42B71ED85D95006B8C7E /* ArterialPool.swift in Sources */,
 				AC9A42B51ED85D8F006B8C7E /* Bag.swift in Sources */,
 				AC9A42B61ED85D92006B8C7E /* Heart.swift in Sources */,

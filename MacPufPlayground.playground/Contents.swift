@@ -4,9 +4,12 @@ import Foundation
 @testable import MacPUFFramework
 
 let macpuf = Simulator()
-macpuf.simulate()
+macpuf.iterations = 180
 macpuf.intervalFactor = 1
 macpuf.simulate()
-macpuf.intervalFactor = 30
+macpuf.intervalFactor = 10
 macpuf.simulate()
+macpuf.intervalFactor = 10
+macpuf.simulate()
+
 

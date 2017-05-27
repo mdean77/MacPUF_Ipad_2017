@@ -22,7 +22,7 @@ class ArterialPool: Metabolizer{
 		amountOfOxygen = 195.3276								// MacPuf variable RO2MT  Factor 62
 		pO2 = 93.4906											// MacPuf variable RO2PR  Factor 72
 		oxygenContent = 0.0 //19.5328									// MacPuf variable RO2CT  Factor 49
-		oxygenSaturation = 0									// gets fixed by calcContents
+		oxygenSaturation = 0.0									// gets fixed by calcContents
 		amountOfCO2 = 474.1322									// MacPuf variable RC2MT  Factor 63
 		pCO2 = 40.0676											// MacPuf variable RC2PR  Factor 74
 		carbonDioxideContent = 0.0 //47.4132							// MacPuf variable RC2CT  Factor 78
