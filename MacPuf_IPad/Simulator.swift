@@ -28,7 +28,7 @@ class Simulator {
 		for i in 1...iterations {
 			human.simulate(i)
 			if i % intervalFactor == 0 {
-				human.cycleReport()
+				print(human.cycleReport())
 		}
 		}
 		human.runReport()

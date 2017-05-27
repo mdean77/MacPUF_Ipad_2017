@@ -72,72 +72,32 @@ class Human: DamperObject{
 		iterations = newIterations
 	}
 	
-	// This will eventually be what is printed out on each cycle - the individual line report
-	func cycleReport(){
+	func cycleReport() -> String{
+		// Returns a string for single line of output
 		let scale = 120.0
 		let lineWidth = 72.0
 		let factor = lineWidth/scale
 		let po2 = arteries.pO2 < scale ? Int(arteries.pO2*factor) : Int(lineWidth)
 		let pco2 = arteries.pCO2 < scale ? Int(arteries.pCO2*factor) : Int(lineWidth)
-		// let vent = lungs.totalVentilation	// NEED LUNGS FIRST
-		// let rate = lungs.respiratoryRate
+		let vent = Int(55*factor)  // Replace with lungs.totalVentilation when I have lungs
+		let rate = Int(14*factor)  // Replace with lungs.respiratoryRate when I have lungs
 		
 		let seconds = totalSeconds % 60
 		let minutes = totalSeconds / 60
-		var result:String
-		var temp:String = ""
+		var temp = String(repeating: " ", count: 72)
 		
-		
-		let start = temp.index(temp.startIndex, offsetBy:po2)
-		let end = temp.index(temp.startIndex, offsetBy:po2+1)
-		let range = start...end
-		//temp.replacingCharacters(in: range, with: "O")
+		let oxygenIndex = temp.index(temp.startIndex, offsetBy:po2)
+		let carbonDioxideIndex = temp.index(temp.startIndex, offsetBy:pco2)
+		let rateIndex = temp.index(temp.startIndex, offsetBy: rate)
+		let ventIndex = temp.index(temp.startIndex, offsetBy: vent)
 
-		
-		//temp.replacingCharacters(in:temp.index(temp.startIndex, offsetBy:po2)...temp.index(temp.startIndex, offsetBy:po2), with: "O")
-		print("Human cycle report")
+		temp.replaceSubrange(oxygenIndex...oxygenIndex, with:"O")
+		temp.replaceSubrange(carbonDioxideIndex...carbonDioxideIndex, with:"C")
+		temp.replaceSubrange(rateIndex...rateIndex, with:"F")
+		temp.replaceSubrange(ventIndex...ventIndex, with:"V")
+		let result = String(format:"%4d:%2d     ",minutes, seconds).appending(temp)
+		return(result)
 	}
-
-//	-(NSString *) cycleReport
-//	{
-//	// This is designed to print out whatever should come at each cycle for O2, CO2, ventilation, and RRate.
-//	// It is somewhat based on BRETH.  The assumed string length is 72 characters, and the string will be
-//	// appended onto a time measurement.
-//	//
-//	NSMutableString *result;		// holds the physiological
-//	NSMutableString *temp;		// holds the gases until attached to result
-//	int pO2, pCO2, vent, rate;
-//	int minutes, seconds;
-//	NSRange O_Range, V_Range, C_Range, R_Range;	// NSRange is struct with location, length int members
-//	const float factor = (float)72/120;  	// Converts a scale of 120 to a length of 72 characters
-//	// Now get these puppies
-//	pO2 = [myArteries pO2];
-//	pCO2 = [myArteries pCO2];
-//	vent = [myLungs totalVentilation];
-//	rate = [myLungs respiratoryRate];
-//	O_Range.location = (pO2 < 120) ? pO2*factor :72;
-//	O_Range.length = 1;
-//	C_Range.location = (pCO2 < 120) ? pCO2*factor :72;
-//	C_Range.length = 1;
-//	V_Range.location = (vent < 120) ? vent*factor :72;
-//	V_Range.length = 1;
-//	R_Range.location = (rate < 120) ? rate*factor :72;
-//	R_Range.length = 1;
-//	seconds = totalSeconds % 60;
-//	minutes = totalSeconds / 60;
-//	
-//	result = [[NSMutableString alloc] initWithCapacity:82];
-//	[result appendFormat:@"%4d:%2d     ", minutes, seconds];
-//	temp = [[NSMutableString alloc] initWithCapacity:73];
-//	[temp setString:@"                                                                         \n"];
-//	[temp replaceCharactersInRange:O_Range withString:@"O"];	// pO2 in mm Hg
-//	[temp replaceCharactersInRange:C_Range withString:@"C"];	// pCO2 in mm Hg
-//	[temp replaceCharactersInRange:V_Range withString:@"V"];	// total ventilation in liters
-//	[temp replaceCharactersInRange:R_Range withString:@"F"];	// frequency of breaths per minute
-//	[result appendString:temp];
-//	[temp release];
-//	return result;
-//	}
 	
 	// This will eventually be what is printed after the iterations have run
 	func runReport(){
@@ -152,7 +112,7 @@ class Human: DamperObject{
 	// This will eventually be the main simulation routine
 	func simulate(_ cycle:Int){
 		totalSeconds += 1
-		print("Simulation cycle \(cycle)")
+		//print("Simulation cycle \(cycle)")
 	}
 	
 
