@@ -19,6 +19,8 @@
 		AC6481F51AD9B9CF004FD214 /* VenousPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6481F41AD9B9CF004FD214 /* VenousPool.swift */; };
 		AC6E746E1ED8DA86009C626C /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E746D1ED8DA86009C626C /* Simulator.swift */; };
 		AC6E746F1ED8DA86009C626C /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E746D1ED8DA86009C626C /* Simulator.swift */; };
+		AC85B2911EDB141F00FF1178 /* macpuf.out in Resources */ = {isa = PBXBuildFile; fileRef = AC85B2901EDB141F00FF1178 /* macpuf.out */; };
+		AC85B2931EDB147A00FF1178 /* ExecutionReadMe in Resources */ = {isa = PBXBuildFile; fileRef = AC85B2921EDB147A00FF1178 /* ExecutionReadMe */; };
 		AC9A42AF1ED85D79006B8C7E /* MacPUFFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = AC9A42AD1ED85D79006B8C7E /* MacPUFFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AC9A42B31ED85D87006B8C7E /* VenousPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6481F41AD9B9CF004FD214 /* VenousPool.swift */; };
 		AC9A42B41ED85D8B006B8C7E /* Human.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6481F01AD985D1004FD214 /* Human.swift */; };
@@ -79,6 +81,8 @@
 		AC6481F01AD985D1004FD214 /* Human.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Human.swift; sourceTree = "<group>"; };
 		AC6481F41AD9B9CF004FD214 /* VenousPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenousPool.swift; sourceTree = "<group>"; };
 		AC6E746D1ED8DA86009C626C /* Simulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Simulator.swift; sourceTree = "<group>"; };
+		AC85B2901EDB141F00FF1178 /* macpuf.out */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = macpuf.out; sourceTree = "<group>"; };
+		AC85B2921EDB147A00FF1178 /* ExecutionReadMe */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ExecutionReadMe; sourceTree = "<group>"; };
 		AC9A42AB1ED85D79006B8C7E /* MacPUFFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MacPUFFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC9A42AD1ED85D79006B8C7E /* MacPUFFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacPUFFramework.h; sourceTree = "<group>"; };
 		AC9A42AE1ED85D79006B8C7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 				ACAA9F6E1AD6AA3A003390CA /* Documentation */,
 				ACAA9F691AD6A981003390CA /* Objective C Source */,
 				ACAA9F4F1AD6A8DE003390CA /* FORTRAN Source */,
+				AC85B28F1EDB135400FF1178 /* FORTRAN Executable */,
 				AC484DB01AD6A67E009EB609 /* MacPuf_IPad */,
 				AC484DC61AD6A67E009EB609 /* MacPuf_IPadTests */,
 				AC9A42AC1ED85D79006B8C7E /* MacPUFFramework */,
@@ -250,6 +255,15 @@
 				AC484DC81AD6A67E009EB609 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AC85B28F1EDB135400FF1178 /* FORTRAN Executable */ = {
+			isa = PBXGroup;
+			children = (
+				AC85B2901EDB141F00FF1178 /* macpuf.out */,
+				AC85B2921EDB147A00FF1178 /* ExecutionReadMe */,
+			);
+			name = "FORTRAN Executable";
 			sourceTree = "<group>";
 		};
 		AC9A42AC1ED85D79006B8C7E /* MacPUFFramework */ = {
@@ -493,6 +507,8 @@
 			files = (
 				ACAA9F701AD6AAF1003390CA /* MacPuffBook.pdf in Resources */,
 				AC484DB91AD6A67E009EB609 /* Main.storyboard in Resources */,
+				AC85B2911EDB141F00FF1178 /* macpuf.out in Resources */,
+				AC85B2931EDB147A00FF1178 /* ExecutionReadMe in Resources */,
 				AC484DBE1AD6A67E009EB609 /* LaunchScreen.xib in Resources */,
 				AC484DBB1AD6A67E009EB609 /* Images.xcassets in Resources */,
 			);
