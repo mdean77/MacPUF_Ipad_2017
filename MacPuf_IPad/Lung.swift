@@ -55,7 +55,9 @@ class Lung : Metabolizer {
 	}
 	
 	func description() -> String{
-	return String(format:"\nAlv./Lung%8.1f%8.1f    (Sat=%4.1f%%) %8.0f%8.0f\n(Pulm.cap)%7.1f%8.1f%8.1f%8.1f",pO2, pCO2,oxygenSaturation*100,amountOfOxygen,amountOfCO2,pO2,pCO2,oxygenContent,carbonDioxideContent)
+		let result1 = String(format:"\nAlv./Lung%8.1f%8.1f    (Sat=%4.1f%%) %8.0f%8.0f",pO2, pCO2,oxygenSaturation*100,amountOfOxygen,amountOfCO2)
+		let result2 = String(format:"\n(Pulm.cap)%7.1f%8.1f%8.1f%8.1f",pO2,pCO2,oxygenContent,carbonDioxideContent)
+		return result1 + result2
 	}
 	
 }
