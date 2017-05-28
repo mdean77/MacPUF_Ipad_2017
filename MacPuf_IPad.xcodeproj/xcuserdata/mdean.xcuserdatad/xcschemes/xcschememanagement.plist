@@ -26,6 +26,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>MacpufConsoleTool.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -40,6 +45,11 @@
 			<true/>
 		</dict>
 		<key>AC9A42AA1ED85D79006B8C7E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ACAB43781EDB5991000895AC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

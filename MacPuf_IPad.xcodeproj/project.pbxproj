@@ -37,6 +37,18 @@
 		ACAB43711EDB23D1000895AC /* Tissue.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB436F1EDB23D1000895AC /* Tissue.swift */; };
 		ACAB43731EDB23EC000895AC /* Ventilator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB43721EDB23EC000895AC /* Ventilator.swift */; };
 		ACAB43741EDB23EC000895AC /* Ventilator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB43721EDB23EC000895AC /* Ventilator.swift */; };
+		ACAB437C1EDB5991000895AC /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB437B1EDB5991000895AC /* main.swift */; };
+		ACAB43801EDB59B1000895AC /* ArterialPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA9F731AD6ADBD003390CA /* ArterialPool.swift */; };
+		ACAB43811EDB59B6000895AC /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6481EE1AD97A01004FD214 /* Bag.swift */; };
+		ACAB43821EDB59BA000895AC /* Brain.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB436C1EDB23BD000895AC /* Brain.swift */; };
+		ACAB43831EDB59BD000895AC /* Heart.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6481EA1AD83981004FD214 /* Heart.swift */; };
+		ACAB43841EDB59C1000895AC /* Human.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6481F01AD985D1004FD214 /* Human.swift */; };
+		ACAB43851EDB59C4000895AC /* Lung.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC99DC71ED9F8B700FEE37F /* Lung.swift */; };
+		ACAB43861EDB59C8000895AC /* Metabolizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA9F6A1AD6A9E8003390CA /* Metabolizer.swift */; };
+		ACAB43871EDB59D4000895AC /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E746D1ED8DA86009C626C /* Simulator.swift */; };
+		ACAB43881EDB59D7000895AC /* Tissue.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB436F1EDB23D1000895AC /* Tissue.swift */; };
+		ACAB43891EDB59DA000895AC /* VenousPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6481F41AD9B9CF004FD214 /* VenousPool.swift */; };
+		ACAB438A1EDB59DC000895AC /* Ventilator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB43721EDB23EC000895AC /* Ventilator.swift */; };
 		ACC99DC81ED9F8B700FEE37F /* Lung.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC99DC71ED9F8B700FEE37F /* Lung.swift */; };
 		ACC99DC91ED9F8B700FEE37F /* Lung.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC99DC71ED9F8B700FEE37F /* Lung.swift */; };
 		ACEC411E1ADB22C0004CE8FD /* libMacPufFrameworks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEC41131ADB22C0004CE8FD /* libMacPufFrameworks.a */; };
@@ -60,6 +72,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		ACAB43771EDB5991000895AC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		ACEC41111ADB22C0004CE8FD /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -147,6 +168,8 @@
 		ACAB436C1EDB23BD000895AC /* Brain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brain.swift; sourceTree = "<group>"; };
 		ACAB436F1EDB23D1000895AC /* Tissue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tissue.swift; sourceTree = "<group>"; };
 		ACAB43721EDB23EC000895AC /* Ventilator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ventilator.swift; sourceTree = "<group>"; };
+		ACAB43791EDB5991000895AC /* MacpufConsoleTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MacpufConsoleTool; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACAB437B1EDB5991000895AC /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		ACC99DC71ED9F8B700FEE37F /* Lung.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lung.swift; sourceTree = "<group>"; };
 		ACEC410D1AD9DB99004CE8FD /* MacPufPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MacPufPlayground.playground; sourceTree = "<group>"; };
 		ACEC41131ADB22C0004CE8FD /* libMacPufFrameworks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMacPufFrameworks.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +192,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AC9A42A71ED85D79006B8C7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACAB43761EDB5991000895AC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -204,6 +234,7 @@
 				AC484DB01AD6A67E009EB609 /* MacPuf_IPad */,
 				AC484DC61AD6A67E009EB609 /* MacPuf_IPadTests */,
 				AC9A42AC1ED85D79006B8C7E /* MacPUFFramework */,
+				ACAB437A1EDB5991000895AC /* MacpufConsoleTool */,
 				AC484DAF1AD6A67E009EB609 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -216,6 +247,7 @@
 				ACEC41131ADB22C0004CE8FD /* libMacPufFrameworks.a */,
 				ACEC411D1ADB22C0004CE8FD /* MacPufFrameworksTests.xctest */,
 				AC9A42AB1ED85D79006B8C7E /* MacPUFFramework.framework */,
+				ACAB43791EDB5991000895AC /* MacpufConsoleTool */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -358,6 +390,14 @@
 			name = Documentation;
 			sourceTree = "<group>";
 		};
+		ACAB437A1EDB5991000895AC /* MacpufConsoleTool */ = {
+			isa = PBXGroup;
+			children = (
+				ACAB437B1EDB5991000895AC /* main.swift */,
+			);
+			path = MacpufConsoleTool;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -425,6 +465,23 @@
 			productReference = AC9A42AB1ED85D79006B8C7E /* MacPUFFramework.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		ACAB43781EDB5991000895AC /* MacpufConsoleTool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACAB437D1EDB5991000895AC /* Build configuration list for PBXNativeTarget "MacpufConsoleTool" */;
+			buildPhases = (
+				ACAB43751EDB5991000895AC /* Sources */,
+				ACAB43761EDB5991000895AC /* Frameworks */,
+				ACAB43771EDB5991000895AC /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacpufConsoleTool;
+			productName = MacpufConsoleTool;
+			productReference = ACAB43791EDB5991000895AC /* MacpufConsoleTool */;
+			productType = "com.apple.product-type.tool";
+		};
 		ACEC41121ADB22C0004CE8FD /* MacPufFrameworks */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACEC41241ADB22C0004CE8FD /* Build configuration list for PBXNativeTarget "MacPufFrameworks" */;
@@ -466,6 +523,7 @@
 		AC484DA61AD6A67E009EB609 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "J Michael Dean";
 				TargetAttributes = {
@@ -480,6 +538,10 @@
 					};
 					AC9A42AA1ED85D79006B8C7E = {
 						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					ACAB43781EDB5991000895AC = {
+						CreatedOnToolsVersion = 8.3.2;
 						ProvisioningStyle = Automatic;
 					};
 					ACEC41121ADB22C0004CE8FD = {
@@ -508,6 +570,7 @@
 				ACEC41121ADB22C0004CE8FD /* MacPufFrameworks */,
 				ACEC411C1ADB22C0004CE8FD /* MacPufFrameworksTests */,
 				AC9A42AA1ED85D79006B8C7E /* MacPUFFramework */,
+				ACAB43781EDB5991000895AC /* MacpufConsoleTool */,
 			);
 		};
 /* End PBXProject section */
@@ -593,6 +656,25 @@
 				ACAB436E1EDB23BD000895AC /* Brain.swift in Sources */,
 				ACAB43711EDB23D1000895AC /* Tissue.swift in Sources */,
 				AC9A42B41ED85D8B006B8C7E /* Human.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACAB43751EDB5991000895AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACAB43851EDB59C4000895AC /* Lung.swift in Sources */,
+				ACAB437C1EDB5991000895AC /* main.swift in Sources */,
+				ACAB43861EDB59C8000895AC /* Metabolizer.swift in Sources */,
+				ACAB438A1EDB59DC000895AC /* Ventilator.swift in Sources */,
+				ACAB43841EDB59C1000895AC /* Human.swift in Sources */,
+				ACAB43811EDB59B6000895AC /* Bag.swift in Sources */,
+				ACAB43871EDB59D4000895AC /* Simulator.swift in Sources */,
+				ACAB43891EDB59DA000895AC /* VenousPool.swift in Sources */,
+				ACAB43831EDB59BD000895AC /* Heart.swift in Sources */,
+				ACAB43821EDB59BA000895AC /* Brain.swift in Sources */,
+				ACAB43881EDB59D7000895AC /* Tissue.swift in Sources */,
+				ACAB43801EDB59B1000895AC /* ArterialPool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -762,10 +844,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -783,10 +862,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = MacPuf_IPadTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "J.-Michael-Dean.$(PRODUCT_NAME:rfc1034identifier)";
@@ -845,6 +921,35 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		ACAB437E1EDB5991000895AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		ACAB437F1EDB5991000895AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -938,6 +1043,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		ACAB437D1EDB5991000895AC /* Build configuration list for PBXNativeTarget "MacpufConsoleTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACAB437E1EDB5991000895AC /* Debug */,
+				ACAB437F1EDB5991000895AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		ACEC41241ADB22C0004CE8FD /* Build configuration list for PBXNativeTarget "MacPufFrameworks" */ = {
 			isa = XCConfigurationList;
