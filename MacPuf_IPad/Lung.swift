@@ -49,7 +49,13 @@ class Lung : Metabolizer {
 		carbonDioxideContent = 47.3157								// MacPuf variable PC2CT  Factor 53
 		
 		// In MacPuf model, lung pH and bicarbonateContent are not apparently used in calculations
-		pH = 7.40																			// stored only as a temp during the simulation Line 950
-		bicarbonateContent = 0.0												// stored only as a temp during the simulation Line 950
+		pH = 7.3721																		// stored only as a temp during the simulation Line 950
+		bicarbonateContent = 25.4605									// stored only as a temp during the simulation Line 950
+		calculateContents()
 	}
+	
+	func description() -> String{
+	return String(format:"\nAlv./Lung%8.1f%8.1f    (Sat=%4.1f%%) %8.0f%8.0f\n(Pulm.cap)%7.1f%8.1f%8.1f%8.1f",pO2, pCO2,oxygenSaturation*100,amountOfOxygen,amountOfCO2,pO2,pCO2,oxygenContent,carbonDioxideContent)
+	}
+	
 }

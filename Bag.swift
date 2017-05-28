@@ -21,4 +21,8 @@ class Bag {
 		self.carbonDioxide = carbonDioxide
 		self.oxygen = oxygen
 	}
+	
+	func description()->String{
+		return String(format:"\nThere is no Douglas bag attached at present.")
+	}
 }

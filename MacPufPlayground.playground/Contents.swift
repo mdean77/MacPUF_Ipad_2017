@@ -4,12 +4,8 @@ import Foundation
 @testable import MacPUFFramework
 
 let macpuf = Simulator()
-macpuf.iterations = 180
-macpuf.intervalFactor = 1
-macpuf.simulate()
-macpuf.intervalFactor = 10
-macpuf.simulate()
+macpuf.iterations = 60
 macpuf.intervalFactor = 10
 macpuf.simulate()
 
-
+macpuf.human.brain

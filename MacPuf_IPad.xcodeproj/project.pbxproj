@@ -31,6 +31,12 @@
 		ACAA9F6B1AD6A9E8003390CA /* Metabolizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA9F6A1AD6A9E8003390CA /* Metabolizer.swift */; };
 		ACAA9F701AD6AAF1003390CA /* MacPuffBook.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ACAA9F6F1AD6AAF1003390CA /* MacPuffBook.pdf */; };
 		ACAA9F741AD6ADBD003390CA /* ArterialPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA9F731AD6ADBD003390CA /* ArterialPool.swift */; };
+		ACAB436D1EDB23BD000895AC /* Brain.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB436C1EDB23BD000895AC /* Brain.swift */; };
+		ACAB436E1EDB23BD000895AC /* Brain.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB436C1EDB23BD000895AC /* Brain.swift */; };
+		ACAB43701EDB23D1000895AC /* Tissue.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB436F1EDB23D1000895AC /* Tissue.swift */; };
+		ACAB43711EDB23D1000895AC /* Tissue.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB436F1EDB23D1000895AC /* Tissue.swift */; };
+		ACAB43731EDB23EC000895AC /* Ventilator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB43721EDB23EC000895AC /* Ventilator.swift */; };
+		ACAB43741EDB23EC000895AC /* Ventilator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB43721EDB23EC000895AC /* Ventilator.swift */; };
 		ACC99DC81ED9F8B700FEE37F /* Lung.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC99DC71ED9F8B700FEE37F /* Lung.swift */; };
 		ACC99DC91ED9F8B700FEE37F /* Lung.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC99DC71ED9F8B700FEE37F /* Lung.swift */; };
 		ACEC411E1ADB22C0004CE8FD /* libMacPufFrameworks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEC41131ADB22C0004CE8FD /* libMacPufFrameworks.a */; };
@@ -138,6 +144,9 @@
 		ACAA9F6D1AD6AA2C003390CA /* VARIABLES */ = {isa = PBXFileReference; lastKnownFileType = text; path = VARIABLES; sourceTree = "<group>"; };
 		ACAA9F6F1AD6AAF1003390CA /* MacPuffBook.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = MacPuffBook.pdf; sourceTree = "<group>"; };
 		ACAA9F731AD6ADBD003390CA /* ArterialPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArterialPool.swift; sourceTree = "<group>"; };
+		ACAB436C1EDB23BD000895AC /* Brain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brain.swift; sourceTree = "<group>"; };
+		ACAB436F1EDB23D1000895AC /* Tissue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tissue.swift; sourceTree = "<group>"; };
+		ACAB43721EDB23EC000895AC /* Ventilator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ventilator.swift; sourceTree = "<group>"; };
 		ACC99DC71ED9F8B700FEE37F /* Lung.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lung.swift; sourceTree = "<group>"; };
 		ACEC410D1AD9DB99004CE8FD /* MacPufPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MacPufPlayground.playground; sourceTree = "<group>"; };
 		ACEC41131ADB22C0004CE8FD /* libMacPufFrameworks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMacPufFrameworks.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,14 +223,17 @@
 		AC484DB01AD6A67E009EB609 /* MacPuf_IPad */ = {
 			isa = PBXGroup;
 			children = (
-				ACC99DC71ED9F8B700FEE37F /* Lung.swift */,
-				AC6481F41AD9B9CF004FD214 /* VenousPool.swift */,
-				AC6481F01AD985D1004FD214 /* Human.swift */,
-				AC6E746D1ED8DA86009C626C /* Simulator.swift */,
-				AC6481EE1AD97A01004FD214 /* Bag.swift */,
-				AC6481EA1AD83981004FD214 /* Heart.swift */,
 				ACAA9F731AD6ADBD003390CA /* ArterialPool.swift */,
+				AC6481EE1AD97A01004FD214 /* Bag.swift */,
+				ACAB436C1EDB23BD000895AC /* Brain.swift */,
+				AC6481EA1AD83981004FD214 /* Heart.swift */,
+				AC6481F01AD985D1004FD214 /* Human.swift */,
+				ACC99DC71ED9F8B700FEE37F /* Lung.swift */,
 				ACAA9F6A1AD6A9E8003390CA /* Metabolizer.swift */,
+				AC6E746D1ED8DA86009C626C /* Simulator.swift */,
+				ACAB436F1EDB23D1000895AC /* Tissue.swift */,
+				AC6481F41AD9B9CF004FD214 /* VenousPool.swift */,
+				ACAB43721EDB23EC000895AC /* Ventilator.swift */,
 				AC484DB31AD6A67E009EB609 /* AppDelegate.swift */,
 				AC484DB51AD6A67E009EB609 /* ViewController.swift */,
 				AC484DB71AD6A67E009EB609 /* Main.storyboard */,
@@ -542,13 +554,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACAB43701EDB23D1000895AC /* Tissue.swift in Sources */,
 				ACAA9F6B1AD6A9E8003390CA /* Metabolizer.swift in Sources */,
 				AC6481F11AD985D1004FD214 /* Human.swift in Sources */,
 				AC484DB61AD6A67E009EB609 /* ViewController.swift in Sources */,
 				AC6481EB1AD83981004FD214 /* Heart.swift in Sources */,
+				ACAB436D1EDB23BD000895AC /* Brain.swift in Sources */,
 				AC6481F51AD9B9CF004FD214 /* VenousPool.swift in Sources */,
 				AC484DB41AD6A67E009EB609 /* AppDelegate.swift in Sources */,
 				AC6E746E1ED8DA86009C626C /* Simulator.swift in Sources */,
+				ACAB43731EDB23EC000895AC /* Ventilator.swift in Sources */,
 				ACC99DC81ED9F8B700FEE37F /* Lung.swift in Sources */,
 				AC6481EF1AD97A01004FD214 /* Bag.swift in Sources */,
 				ACAA9F741AD6ADBD003390CA /* ArterialPool.swift in Sources */,
@@ -570,10 +585,13 @@
 				AC9A42B81ED85D98006B8C7E /* Metabolizer.swift in Sources */,
 				AC9A42B31ED85D87006B8C7E /* VenousPool.swift in Sources */,
 				AC6E746F1ED8DA86009C626C /* Simulator.swift in Sources */,
+				ACAB43741EDB23EC000895AC /* Ventilator.swift in Sources */,
 				ACC99DC91ED9F8B700FEE37F /* Lung.swift in Sources */,
 				AC9A42B71ED85D95006B8C7E /* ArterialPool.swift in Sources */,
 				AC9A42B51ED85D8F006B8C7E /* Bag.swift in Sources */,
 				AC9A42B61ED85D92006B8C7E /* Heart.swift in Sources */,
+				ACAB436E1EDB23BD000895AC /* Brain.swift in Sources */,
+				ACAB43711EDB23D1000895AC /* Tissue.swift in Sources */,
 				AC9A42B41ED85D8B006B8C7E /* Human.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

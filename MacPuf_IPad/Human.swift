@@ -39,9 +39,9 @@ class Human {
 	let heart: Heart
 	let bag: Bag
 	let venousPool: VenousPool
-	//let brain:Brain
-	//let tissues:Tissue
-	//let ventilator:Ventilator
+	let brain:Brain
+	let tissues:Tissue
+	let ventilator:Ventilator
 	let lungs:Lung
 	
 	init(){
@@ -49,15 +49,11 @@ class Human {
 		heart = Heart()
 		bag = Bag()
 		venousPool = VenousPool()
-		// brain = Brain()
-		// tissues = Tissue()
-		// ventilator = Ventilator()
+		brain = Brain()
+		tissues = Tissue()
+		ventilator = Ventilator()
 		lungs = Lung()
-		
-		arteries.calculateContents(temperature, DPG: DPG, Hct: Hct, Hgb: Hgb)
-		lungs.calculateContents(temperature, DPG: DPG, Hct: Hct, Hgb: Hgb)
-		// tissues.calculateContents(temperature, DPG: DPG, Hct: Hct, Hgb: Hgb)
-		// brain.calculateContents(temperature, DPG: DPG, Hct: Hct, Hgb: Hgb)
+
 		
 		for i in 1...10 {
 			veinDelay[i-1] = venousPool.oxygenContent

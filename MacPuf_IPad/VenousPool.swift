@@ -36,5 +36,7 @@ class VenousPool: Metabolizer {
 		
 	}
 	
-	
+	func description()-> String{
+	return String(format:"\nMixed Ven. (same as tissue)%6.1f%8.1f%8.0f%8.0f%7.3f%6.1f",oxygenContent, carbonDioxideContent,amountOfOxygen,amountOfCO2,pH,bicarbonateContent)
+	}
 }

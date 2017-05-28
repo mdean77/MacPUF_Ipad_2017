@@ -42,7 +42,6 @@ class Metabolizer {
 	
 	func calculateContents(_ temperature:Double = 37.0,DPG:Double = 3.7843,
 		Hct:Double = 45.0, Hgb:Double = 14.8){
-			
 			// Series of constants needed for the Kelman equations
 			let a1 = -8.532229E3
 			let a2 = 2.121401E3

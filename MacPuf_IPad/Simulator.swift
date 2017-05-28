@@ -47,23 +47,24 @@ class Simulator {
 		return(result)
 	}
 	
-	func runReport(){
+	func runReport()->String{
 		// This prints description after the iterations have been run
 		let x = 10*pow(2,(8.0 - human.arteries.pH)*3.33)
 
-		let result = String(format:"\nFinal values for this run were...\n")
-		let result1 = String(format:"Arterial pO2 = %6.1f            O2 Cont =%6.1f      O2 Sat = %5.1f%%",human.arteries.pO2, human.arteries.oxygenContent,human.arteries.oxygenSaturation*100)
-		let result2 = String(format:"Arterial pCO2 = %5.1f            CO2 Cont =%6.1f",human.arteries.pCO2,human.arteries.carbonDioxideContent)
+		let result = String(format:"\nFinal values for this run were...\n\n")
+		let result1 = String(format:"Arterial pO2 = %6.1f            O2 Cont =%6.1f      O2 Sat = %5.1f%%\n",human.arteries.pO2, human.arteries.oxygenContent,human.arteries.oxygenSaturation*100)
+		let result2 = String(format:"Arterial pCO2 = %5.1f            CO2 Cont =%6.1f\n",human.arteries.pCO2,human.arteries.carbonDioxideContent)
 		
-		let result3 = String(format:"Arterial pH = %7.2f (%3.0f nm)   Arterial bicarbonate = %5.1f\n",human.arteries.pH,x,human.arteries.bicarbonateContent)
+		let result3 = String(format:"Arterial pH = %7.2f (%3.0f nm)   Arterial bicarbonate = %5.1f\n\n",human.arteries.pH,x,human.arteries.bicarbonateContent)
 			
-		let result4 = String(format:"Respiratory rate = %5.1f         Tidal vol.= %6.0f ml", human.lungs.respiratoryRate, human.lungs.tidalVolume)
+		let result4 = String(format:"Respiratory rate = %5.1f         Tidal vol.= %6.0f ml\n", human.lungs.respiratoryRate, human.lungs.tidalVolume)
 			
-		let result5 = String(format:"Total ventilation =%5.1f l/min   Actual cardiac output = %5.1f l/min",human.lungs.totalVentilation, human.heart.effectiveCardiacOutput)
+		let result5 = String(format:"Total ventilation =%5.1f l/min   Actual cardiac output = %5.1f l/min\n",human.lungs.totalVentilation, human.heart.effectiveCardiacOutput)
 			
 		let result6 = String(format:"Total dead space = %4.0f ml       Actual venous admixture = %3.1f%%\n",human.lungs.deadSpace,human.heart.effectiveVenousAdmixture)
 		
-		print(result); print(result1); print(result2); print(result3); print(result4); print(result5); print(result6);
+		return result + result1 + result2 + result3 + result4 + result5 + result6
+		//print(result); print(result1); print(result2); print(result3); print(result4); print(result5); print(result6);
 	}
 	
 	func dumpParametersReport() -> String{
@@ -71,6 +72,20 @@ class Simulator {
 
 	let result = String(format:"List of first six parameters:\n     Inspired O2 %%:%6.2f\n     Inspired CO2 %%:%6.2f\n     Cardiac performance %%:%7.2f\n     Metabolic rate %%:%7.2f\n     Right to left:%6.2f\n     Extra dead space:%6.2f",human.lungs.FiO2,human.lungs.FiCO2,human.heart.cardiacFunction,human.metabolicRate,human.heart.rightToLeftShunt, human.lungs.addedDeadSpace)
 	return result;
+	}
+	
+	func inspectionReport()->String{
+		let header = String(format:"\nTime         P.Pressures     Contents cc/dl  Amounts in cc  pH    HCO3-\n%4d secs     O2     CO2      O2     CO2       O2     CO2",human.totalSeconds)
+		
+		let artString:String = human.arteries.description()
+		let lungString:String  = human.lungs.description()
+		let brainString:String = human.brain.description()
+		let tissueString:String = human.tissues.description()
+		let veinString:String = human.venousPool.description()
+		let bagString:String = human.bag.description()
+		let ventilatorString:String = human.ventilator.description()
+		let result = header + artString + lungString + brainString + tissueString + veinString + "\n" +  ventilatorString + bagString
+		return(result)
 	}
 	
 	func simulate(){
@@ -84,8 +99,8 @@ class Simulator {
 				print(cycleReport())
 		}
 		}
-		runReport()
+		print(runReport())
 		print(dumpParametersReport())
-		
+		print(inspectionReport())
 	}
 }

@@ -34,6 +34,11 @@ class ArterialPool: Metabolizer{
 		effluentNitrogenContent = 0.7257						// MacPuf same as EN2CT
 		amountOfN2 = 7.2573										// MacPuf variable RN2MT  Factor 108
 		lactateConcentration = 0.9940							// MacPuf variable RLACT  Factor 90
+		calculateContents()
+	}
+	
+	func description() -> String{
+	return String(format:"\nArterial %8.1f%8.1f%8.1f%8.1f%8.0f%8.0f%7.3f%6.1f",pO2, pCO2,oxygenContent,carbonDioxideContent,amountOfOxygen,amountOfCO2,pH,bicarbonateContent)
 	}
 	
 	// This method replaces the MacPuf GSINV subroutine.  It accepts values of O2 and CO2 content and using
