@@ -3,9 +3,8 @@
 import Foundation
 @testable import MacPUFFramework
 
-let macpuf = Simulator()
-macpuf.iterations = 60
-macpuf.intervalFactor = 10
-macpuf.simulate()
 
-macpuf.human.brain
+let lungs = Lung()
+lungs.carbonDioxideContent
+lungs.calculateContents()
+lungs.carbonDioxideContent
