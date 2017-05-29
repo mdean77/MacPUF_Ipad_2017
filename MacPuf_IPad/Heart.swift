@@ -9,7 +9,7 @@
 
 import Foundation
 
-struct Heart {
+class Heart {
 	
 	var	cardiacFunction:Double = 100.000										// MacPuf variable CO		Factor 3
 	var	effectiveCardiacOutput:Double = 4.9528							// MacPuf variable COADJ	Factor 93

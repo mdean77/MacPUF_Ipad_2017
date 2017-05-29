@@ -11,13 +11,14 @@ import Foundation
 //	This class instantiates the human object, sets the iterations, contains simulation parameters,
 //	and handles interface to user for changes.
 //
-//	I anticipate that much functionality in this object will be placed in iOS classes, but I am 
+//	I anticipate that much functionality in this object will be placed in iOS classes, but I am
 //	creating this class now so that I can verify function of the model in a console environment.
 
 class Simulator {
 	
 	var iterations: Int = 60
 	var intervalFactor : Int = 10
+
 	let human = Human()
 	
 	func cycleReport() -> String{
@@ -50,28 +51,22 @@ class Simulator {
 	func runReport()->String{
 		// This prints description after the iterations have been run
 		let x = 10*pow(2,(8.0 - human.arteries.pH)*3.33)
-
 		let result = String(format:"\nFinal values for this run were...\n\n")
 		let result1 = String(format:"Arterial pO2 = %6.1f            O2 Cont =%6.1f      O2 Sat = %5.1f%%\n",human.arteries.pO2, human.arteries.oxygenContent,human.arteries.oxygenSaturation*100)
 		let result2 = String(format:"Arterial pCO2 = %5.1f            CO2 Cont =%6.1f\n",human.arteries.pCO2,human.arteries.carbonDioxideContent)
-		
 		let result3 = String(format:"Arterial pH = %7.2f (%3.0f nm)   Arterial bicarbonate = %5.1f\n\n",human.arteries.pH,x,human.arteries.bicarbonateContent)
-			
 		let result4 = String(format:"Respiratory rate = %5.1f         Tidal vol.= %6.0f ml\n", human.lungs.respiratoryRate, human.lungs.tidalVolume)
-			
 		let result5 = String(format:"Total ventilation =%5.1f l/min   Actual cardiac output = %5.1f l/min\n",human.lungs.totalVentilation, human.heart.effectiveCardiacOutput)
-			
 		let result6 = String(format:"Total dead space = %4.0f ml       Actual venous admixture = %3.1f%%\n",human.lungs.deadSpace,human.heart.effectiveVenousAdmixture)
 		
 		return result + result1 + result2 + result3 + result4 + result5 + result6
-		//print(result); print(result1); print(result2); print(result3); print(result4); print(result5); print(result6);
 	}
 	
 	func dumpParametersReport() -> String{
-	// Print out first 6 changeable parameters
-
-	let result = String(format:"List of first six parameters:\n     Inspired O2 %%:%6.2f\n     Inspired CO2 %%:%6.2f\n     Cardiac performance %%:%7.2f\n     Metabolic rate %%:%7.2f\n     Right to left:%6.2f\n     Extra dead space:%6.2f",human.lungs.FiO2,human.lungs.FiCO2,human.heart.cardiacFunction,human.metabolicRate,human.heart.rightToLeftShunt, human.lungs.addedDeadSpace)
-	return result;
+		// Print out first 6 changeable parameters
+		
+		let result = String(format:"List of first six parameters:\n     Inspired O2 %%:%6.2f\n     Inspired CO2 %%:%6.2f\n     Cardiac performance %%:%7.2f\n     Metabolic rate %%:%7.2f\n     Right to left:%6.2f\n     Extra dead space:%6.2f",human.lungs.FiO2,human.lungs.FiCO2,human.heart.cardiacFunction,human.metabolicRate,human.heart.rightToLeftShunt, human.lungs.addedDeadSpace)
+		return result;
 	}
 	
 	func inspectionReport()->String{
@@ -97,7 +92,7 @@ class Simulator {
 			human.simulate(i)
 			if i % intervalFactor == 0 {
 				print(cycleReport())
-		}
+			}
 		}
 		print(runReport())
 		print(dumpParametersReport())

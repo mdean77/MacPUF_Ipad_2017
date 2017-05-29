@@ -93,6 +93,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AC31B6FE1EDB7F83005F1C9E /* DictFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictFile.swift; sourceTree = "<group>"; };
 		AC484DAE1AD6A67E009EB609 /* MacPuf_IPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacPuf_IPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC484DB21AD6A67E009EB609 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC484DB31AD6A67E009EB609 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -255,6 +256,7 @@
 		AC484DB01AD6A67E009EB609 /* MacPuf_IPad */ = {
 			isa = PBXGroup;
 			children = (
+				AC31B6FE1EDB7F83005F1C9E /* DictFile.swift */,
 				ACAA9F731AD6ADBD003390CA /* ArterialPool.swift */,
 				AC6481EE1AD97A01004FD214 /* Bag.swift */,
 				ACAB436C1EDB23BD000895AC /* Brain.swift */,
@@ -1051,6 +1053,7 @@
 				ACAB437F1EDB5991000895AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ACEC41241ADB22C0004CE8FD /* Build configuration list for PBXNativeTarget "MacPufFrameworks" */ = {
 			isa = XCConfigurationList;

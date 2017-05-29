@@ -3,8 +3,9 @@
 import Foundation
 @testable import MacPUFFramework
 
+//let macpuf = Simulator()
+//macpuf.simulate()
 
-let lungs = Lung()
-lungs.carbonDioxideContent
-lungs.calculateContents()
-lungs.carbonDioxideContent
+
+var x = 9.0
+x *= 11
