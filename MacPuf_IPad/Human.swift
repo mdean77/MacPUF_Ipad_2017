@@ -347,14 +347,10 @@ class Human {
 		tissues.amountOfOxygen = max(tissues.amountOfOxygen, 0.01)  // handle decompression
 		
 		// Compute the tissue pO2 damping appropriately:
-		[tissues.setPO2:
-		[tissues.dampChange:[tissues.amountOfOxygen]*c31
-		oldValue:[tissues.pO2]
-		dampConstant:c55]];
-		x = [tissues.amountOfOxygen] - 250;
-		if (x > 0 ) {
-			[tissues.setPO2:45 + 0.09*x];	// FORTRAN Line 520
-		}
+		tissues.pO2 = dampChange(tissues.amountOfOxygen*c31, oldValue: tissues.pO2, dampConstant: c55)
+		x = tissues.amountOfOxygen - 250;
+		if (x > 0 ) {tissues.pO2 + 45 + 0.09*x}	// FORTRAN Line 520
+
 		
 		// FORTRAN LINE 530 STARTS HERE
 		// Lactate metabolism is handled here.  Y represents catabolism related to
