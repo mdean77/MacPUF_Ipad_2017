@@ -84,7 +84,7 @@ class Human {
 		let c71,c72,c73,c74,c75,c76:Double
 		let ft = 1.0/60.0
 		let e = 0.0000001
-		var x, y, z, pc, u, v, w, pj, s, xu:Double
+		var x, y, z, pc, u, v, w, pj, s, xu, qa, qb:Double
 		let xx:Double
 		
 		totalSeconds += 1
@@ -673,10 +673,7 @@ class Human {
 			}
 			
 			
-			if ([lungs.alveolarVentilationPerIteration] < e) {
-				qa = 0.001;
-				qb = e;
-			}
+			if lungs.alveolarVentilationPerIteration < e {qa = 0.001; qb = e}
 			// Set the new amounts of gas
 			[lungs.setAmountOfOxygen:(([lungs.amountOfOxygen]-y)>0.01) ? [lungs.amountOfOxygen] - y : 0.01];
 			[lungs.setAmountOfCO2:(([lungs.amountOfCO2]-z) > 0.01) ? [lungs.amountOfCO2] - z : 0.01];
@@ -690,7 +687,7 @@ class Human {
 		// Take account of inspiratory to expiratory duration ratio
 		v = c37/[lungs.respiratoryRate];
 		v = (v > 4) ? 4 : v;
-		if ([lungs.alveolarVentilationPerIteration] < 20) v = 0;
+		if lungs.alveolarVentilationPerIteration < 20 {v = 0}
 		
 		
 		// Speed of change (x) of alveolar gas tensions is function of tidal volume
