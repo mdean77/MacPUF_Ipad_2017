@@ -362,7 +362,7 @@ class Human {
 		// with low pCO2 or alkalosis - this is convenience, not physiology.  CBF is computed
 		// elsewhere in the simulation and happens to change in the appropriate way.
 		w = [brain.bloodFlow]*0.019;
-		if (w > 1) w = 1;
+		if w > 1 {w = 1}
 		x = [tissues.pH] * 10.0 - 69.0;
 		if (x > w) x = w;
 		
@@ -393,7 +393,7 @@ class Human {
 		// Limit of rate of lactate formation determined by metabolic drive to tissues, or the level of exercise.
 		// It is also related to body size, which is captured in c29.
 		
-		if (w > c40) w = c40;
+		if w > c40 {w = c40}
 		
 		// Reduce lactate catabolism (z) if effective cardiac output is less than 1/3 of normal resting
 		// cardiac output to take account of likely diminished liver and kidney blood flow (and hence
@@ -417,7 +417,7 @@ class Human {
 		// FORTRAN LINE 640
 		// Next we handle the nitrogen stores in tissues, moving N2 between fast (T)
 		// and slow (S) tissue compartments according to partial pressure differences.
-		x = ([tissues.pN2]-[tissues.slowN2]) * c60;
+		x = (tissues.pN2-tissues.slowN2) * c60
 		
 		// PATCHOUT ADJUSTMENT FOR FITNESS
 		//    [tissues.setAmountOfNitrogen:
