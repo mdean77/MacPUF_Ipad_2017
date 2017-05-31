@@ -428,8 +428,8 @@ class Human {
 		//        ([arteries. effluentNitrogenContent] - ([tissues.pN2]*0.00127))-x];
 		tissues.amountOfNitrogen =  tissues.amountOfNitrogen + 0.98*heart.decilitersPerIteration * (arteries.effluentNitrogenContent - (tissues.pN2*0.00127))-x
         
-		
-		[tissues.setAmountSlowNitrogen: [tissues.amountSlowNitrogen] + x];
+		tissues.amountSlowNitrogen = tissues.amountSlowNitrogen + x
+
 		
 		// Test to see if slow space is supersaturated
 		y = ([tissues.amountSlowNitrogen]*c26 - c11)*c27;
@@ -693,10 +693,10 @@ class Human {
 		
 		
 		// Speed of change (x) of alveolar gas tensions is function of tidal volume
-		x = ([lungs.tidalVolume]+100)*c38;
+		x = (lungs.tidalVolume+100)*c38
 		// compute end expiratory partial pressures
-		y = [lungs.amountOfOxygen]*u;
-		z = [lungs.amountOfCO2] * u;
+		y = lungs.amountOfOxygen*u
+		z = lungs.amountOfCO2 * u
 		[lungs.setPO2:
 		[lungs.dampChange:(y+(po2 - y)*v)
 		oldValue:[lungs.pO2]
@@ -714,13 +714,10 @@ class Human {
 		if (qa != 0) pc = qb/qa;
 		//if (qa != 0) [tissues.setRespiratoryQuotient:qb/qa];
 		x = [venousPool.bicarbonateContent] + c3*([lungs.pCO2] - XC2PR);
-		if (x < e) NSLog(@"We have a bad fucking arithmetic problem in old Fortran line 930");
-		// NOTE:  I am skipping some detailed arithmetic traps for now but anticipate having to go back!
-		
-		
-		[lungs.updatePh:x
-		CO2:[lungs.pCO2]];
-		[lungs.calcContents:temperature:Hct:Hgb:DPG];
+        if x < e {print("We have a bad fucking arithmetic problem in old Fortran line 930")}
+        lungs.updatePh(bicarbonate: x, CO2: lungs.pCO2)
+		lungs.calculateContents()
+        // NOTE:  I am skipping some detailed arithmetic traps for now but anticipate having to go back!
 		
 		// Now determine cerebral blood flow adjustments in relation to cardiac output and brain pH (pCO2 sensitive)
 		z = sqrt([heart.effectiveCardiacOutput])*0.5;
