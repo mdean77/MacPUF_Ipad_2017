@@ -361,34 +361,32 @@ class Human {
 		// Cerebral blood flow is used to give appropriate changes in lactate metabolism
 		// with low pCO2 or alkalosis - this is convenience, not physiology.  CBF is computed
 		// elsewhere in the simulation and happens to change in the appropriate way.
-		w = [brain.bloodFlow]*0.019;
+		w = brain.bloodFlow*0.019
 		if w > 1 {w = 1}
-		x = [tissues.pH] * 10.0 - 69.0;
-		if (x > w) x = w;
+		x = tissues.pH * 10.0 - 69.0
+        if x > w {x = w}
 		
 		// Z is catabolic rate for lactate.  First term is hepatic removal, second term is renal removal
 		// with pH influence, and third term is blood flow related metabolism by muscles, made dependent
 		// on cardiac output.  The entire expression is multipled by Y, a function of lactate concentration.
-		z = y*(x*0.8612+0.0232*pow(2,(8-[tissues.pH])*3.33)+[heart.effectiveCardiacOutput]*0.01);
+		z = y*(x*0.8612+0.0232*pow(2,(8-tissues.pH)*3.33)+heart.effectiveCardiacOutput*0.01)
 		w = c70/(w + 0.3);
 		
 		// Fitness is the threshold for switching to anaerobic metabolism;  by its name one can infer
 		// it should relate to physical fitness!
-		v = c73 - [tissues.pO2];
+		v = c73 - tissues.pO2
 		
 		// If the anaerobic trigger occurs, these statements rapidly increase lactate production (w) if
 		// tissue pO2 is low.  In addition, catabolism (z) drops if tissue pO2 is too low.
 		if (v > 0) {
-			w = w + c42*pow(v+1,4);
-			z = z *0.04*[tissues.pO2];
+			w = w + c42 * pow(v+1,4)
+			z = z * 0.04 * tissues.pO2
 		}
 		
 		// XLACT is O2 sparing effect of lactic acid production;  it may not exceed actual O2 consumption (u).
 		x = 2.04*(w - c32);
-		if (x > u) x = u;
-		XLACT = [self dampChange:x
-		oldValue:XLACT
-		dampConstant:c53];		// Fortran line 590
+        if x > u {x = u}
+		XLACT = dampChange(x, oldValue:XLACT, dampConstant:c53)		// Fortran line 590
 		
 		// Limit of rate of lactate formation determined by metabolic drive to tissues, or the level of exercise.
 		// It is also related to body size, which is captured in c29.
@@ -399,20 +397,25 @@ class Human {
 		// cardiac output to take account of likely diminished liver and kidney blood flow (and hence
 		// reduced lactate clearance.
 		
-		if ([heart.effectiveCardiacOutput] < [heart.restingCardiacOutput]*0.3) {
-			z = z * [heart.effectiveCardiacOutput]/c24;
+		if (heart.effectiveCardiacOutput < heart.restingCardiacOutput*0.3) {
+			z = z * heart.effectiveCardiacOutput/c24
 		}
 		
 		// Increase total lactate by difference between production and catabolism
-		v = w - z;
-		[tissues.setLactateAmount:[tissues.lactateAmount] + v];
+		v = w - z
+		tissues.lactateAmount = tissues.lactateAmount + v
 		
 		// Reduce the rate of arterial lactate by using a greater damping constant;  this was
 		// a change to using c75 in the FORTRAN source instead of c55.
-		[arteries.setLactateConcentration:
-			[arteries.dampChange:[tissues.lactateAmount]*2./weight
-			oldValue:[arteries.lactateConcentration]
-			dampConstant:[heart.effectiveCardiacOutput]*0.002/ft]];
+//		[arteries.setLactateConcentration:
+//			[arteries.dampChange:[tissues.lactateAmount]*2./weight
+//			oldValue:[arteries.lactateConcentration]
+//			dampConstant:[heart.effectiveCardiacOutput]*0.002/ft]];
+        
+        arteries.lactateConcentration = dampChange(tissues.lactateAmount*2.0/Double(weight),
+                                                   oldValue:arteries.lactateConcentration,
+                                                   dampConstant: heart.effectiveCardiacOutput * 0.002/ft)
+        
 		
 		// FORTRAN LINE 640
 		// Next we handle the nitrogen stores in tissues, moving N2 between fast (T)
@@ -423,9 +426,8 @@ class Human {
 		//    [tissues.setAmountOfNitrogen:
 		//        [tissues.amountOfNitrogen] + [heart.fitnessAdjustedOutputPerIteration] *
 		//        ([arteries. effluentNitrogenContent] - ([tissues.pN2]*0.00127))-x];
-		[tissues.setAmountOfNitrogen:
-			[tissues.amountOfNitrogen] + 0.98*[heart.decilitersPerIteration] *
-			([arteries. effluentNitrogenContent] - ([tissues.pN2]*0.00127))-x];
+		tissues.amountOfNitrogen =  tissues.amountOfNitrogen + 0.98*heart.decilitersPerIteration * (arteries.effluentNitrogenContent - (tissues.pN2*0.00127))-x
+        
 		
 		[tissues.setAmountSlowNitrogen: [tissues.amountSlowNitrogen] + x];
 		
