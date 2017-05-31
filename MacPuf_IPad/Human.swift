@@ -355,15 +355,15 @@ class Human {
 		// FORTRAN LINE 530 STARTS HERE
 		// Lactate metabolism is handled here.  Y represents catabolism related to
 		// cardiac output and metabolism
-		y = c29*[arteries. lactateConcentration];
+		y = c29*arteries.lactateConcentration
 		
 		// X is a threshold - when tissue pH less than 7.0 catabolism is impaired
 		// Cerebral blood flow is used to give appropriate changes in lactate metabolism
 		// with low pCO2 or alkalosis - this is convenience, not physiology.  CBF is computed
 		// elsewhere in the simulation and happens to change in the appropriate way.
-		w = [brain.bloodFlow]*.019;
+		w = [brain.bloodFlow]*0.019;
 		if (w > 1) w = 1;
-		x = [tissues.pH] * 10. - 69.;
+		x = [tissues.pH] * 10.0 - 69.0;
 		if (x > w) x = w;
 		
 		// Z is catabolic rate for lactate.  First term is hepatic removal, second term is renal removal
@@ -409,9 +409,9 @@ class Human {
 		
 		// Reduce the rate of arterial lactate by using a greater damping constant;  this was
 		// a change to using c75 in the FORTRAN source instead of c55.
-		[arteries. setLactateConcentration:
-			[arteries. dampChange:[tissues.lactateAmount]*2./weight
-			oldValue:[arteries. lactateConcentration]
+		[arteries.setLactateConcentration:
+			[arteries.dampChange:[tissues.lactateAmount]*2./weight
+			oldValue:[arteries.lactateConcentration]
 			dampConstant:[heart.effectiveCardiacOutput]*0.002/ft]];
 		
 		// FORTRAN LINE 640
@@ -487,7 +487,7 @@ class Human {
 			dampConstant:c10]];
 		
 		xnew = [heart.fitnessAdjustedOutputPerIteration]*0.1*
-		(([venousPool. bicarbonateContent] -(XC2PR - 40.)*c3)-[tissues.bicarbonateAmount]*c13);
+		(([venousPool.bicarbonateContent] -(XC2PR - 40.)*c3)-[tissues.bicarbonateAmount]*c13);
 		//   xnew = 0.98*[heart.decilitersPerIteration]*0.1*
 		//       (([venousPool. bicarbonateContent] -(XC2PR - 40.)*c3)-[tissues.bicarbonateAmount]*c13);
   
@@ -518,10 +518,10 @@ class Human {
 		//   [venousPool. amountOfCO2] + [heart.fitnessAdjustedOutputPerIteration]*[tissues.carbonDioxideContent]-
 		//       [heart.decilitersPerIteration]*([venousPool. carbonDioxideContent]*c14 - [arteries. carbonDioxideContent]*
 		//                                  [heart.leftToRightShunt])+x*[arteries. effluentCO2Content]];
-		[venousPool. setAmountOfCO2:
-		[venousPool. amountOfCO2] + 0.98*[heart.decilitersPerIteration]*[tissues.carbonDioxideContent]-
-		[heart.decilitersPerIteration]*([venousPool. carbonDioxideContent]*c14 - [arteries. carbonDioxideContent]*
-		[heart.leftToRightShunt])+x*[arteries. effluentCO2Content]];
+		[venousPool.setAmountOfCO2:
+		[venousPool.amountOfCO2] + 0.98*[heart.decilitersPerIteration]*[tissues.carbonDioxideContent]-
+		[heart.decilitersPerIteration]*([venousPool.carbonDioxideContent]*c14 - [arteries.carbonDioxideContent]*
+		[heart.leftToRightShunt])+x*[arteries.effluentCO2Content]];
 		// NOT SURE IF THIS LINE SHOULD BE AVAILABLE OR NOT
 		// I THINK NOT - pCO2 goes into toilet if I leave this in place so need to find ou where it came from
 		//   [venousPool. setAmountOfCO2: [venousPool. amountOfCO2] + 0.1*[heart.fitnessAdjustedOutputPerIteration]*[tissues.carbonDioxideContent]];
@@ -533,28 +533,28 @@ class Human {
 		//       [venousPool. amountOfOxygen] + [heart.fitnessAdjustedOutputPerIteration]*[tissues.oxygenContent]-
 		//       [heart.decilitersPerIteration]*([venousPool. oxygenContent]*c14 - [arteries. oxygenContent]*
 		//                                  [heart.leftToRightShunt])+x*[arteries. effluentOxygenContent]];
-		[venousPool. setAmountOfOxygen:
-		[venousPool. amountOfOxygen] + 0.98*[heart.decilitersPerIteration]*[tissues.oxygenContent]-
-		[heart.decilitersPerIteration]*([venousPool. oxygenContent]*c14 - [arteries. oxygenContent]*
-		[heart.leftToRightShunt])+x*[arteries. effluentOxygenContent]];
+		[venousPool.setAmountOfOxygen:
+		[venousPool.amountOfOxygen] + 0.98*[heart.decilitersPerIteration]*[tissues.oxygenContent]-
+		[heart.decilitersPerIteration]*([venousPool.oxygenContent]*c14 - [arteries.oxygenContent]*
+		[heart.leftToRightShunt])+x*[arteries.effluentOxygenContent]];
 		
 		// Adjust tissue and venous pool bicarb amounts - bicarb moves after delay line into arterial side
-		xnew = [heart.fitnessAdjustedOutputPerIteration]*0.1*([tissues.bicarbonateAmount]*c13 -([venousPool. bicarbonateContent]-
+		xnew = [heart.fitnessAdjustedOutputPerIteration]*0.1*([tissues.bicarbonateAmount]*c13 -([venousPool.bicarbonateContent]-
 		(XC2PR-40)*c3));
 		//   xnew = 0.98*[heart.decilitersPerIteration]*0.1*([tissues.bicarbonateAmount]*c13 -([venousPool. bicarbonateContent]-
 		//                                                                                               (XC2PR-40)*c3));
 		
-		[venousPool. setBicarbonateAmount:[venousPool. bicarbonateAmount]+xnew + [venousPool. addBicarb]];
+		[venousPool. setBicarbonateAmount:[venousPool. bicarbonateAmount]+xnew + [venousPool.addBicarb]];
 		[tissues.setBicarbonateAmount:[tissues.bicarbonateAmount]-xnew];
 		
 		// Do the venous oxygen and CO2 content changes
-		[venousPool. setOxygenContent:[venousPool. amountOfOxygen]*c2];
-		[venousPool. setCarbonDioxideContent:[venousPool. amountOfCO2]*c2];
+		[venousPool.setOxygenContent:[venousPool.amountOfOxygen]*c2];
+		[venousPool.setCarbonDioxideContent:[venousPool.amountOfCO2]*c2];
 		
 		// Calculate bicarb content after infusion but before delay line
-		[venousPool. setBicarbonateContent:[venousPool. bicarbonateAmount]*c1+([tissues.pCO2]-40)*c3-[tissues.TC3AJ]];
+		[venousPool.setBicarbonateContent:[venousPool.bicarbonateAmount]*c1+([tissues.pCO2]-40)*c3-[tissues.TC3AJ]];
 		XC2PR = [tissues.pCO2];
-		if ([venousPool. bicarbonateAmount]<=0) NSLog(@"We have a big fucking arithmetic problem in venous bicarb!");
+		if ([venousPool.bicarbonateAmount]<=0) NSLog(@"We have a big fucking arithmetic problem in venous bicarb!");
 		
 		// Call DELAY - will put this inline here.  New Year Day 2:13 PM
 		
@@ -566,16 +566,16 @@ class Human {
 			// NSLog(@"The var iter is %i.\n", iter);
 			n = iter;
 			if (n > 10) n = n - 10;
-			veinDelay[n - 1] = [venousPool. oxygenContent];
-			veinDelay[n + 9] = [venousPool. carbonDioxideContent];
-			veinDelay[n + 19] = [venousPool. bicarbonateContent];
+			veinDelay[n - 1] = [venousPool.oxygenContent];
+			veinDelay[n + 9] = [venousPool.carbonDioxideContent];
+			veinDelay[n + 19] = [venousPool.bicarbonateContent];
 			veinDelay[n + 29] = XC2PR;
 		}
 		n = pntdly + nft;
 		if (n > 10) n = n - 10;
-		[venousPool. setOxygenContent:veinDelay[n - 1]];
-		[venousPool. setCarbonDioxideContent:veinDelay[n+9]];
-		[venousPool. setBicarbonateContent:veinDelay[n+19]];
+		[venousPool.setOxygenContent:veinDelay[n - 1]];
+		[venousPool.setCarbonDioxideContent:veinDelay[n+9]];
+		[venousPool.setBicarbonateContent:veinDelay[n+19]];
 		XC2PR = veinDelay[n+29];
 		pntdly = n;
 		
@@ -584,7 +584,7 @@ class Human {
 		// and this is usually right, but if I need to pass other parameters I have to fool it, as shown here:
 		// The call in Macpuf is to PHFNC(VC3CT, XC2PR) instead of (VC3CT, VC2PR)
 		
-		[venousPool. updatePh:[venousPool. bicarbonateContent]
+		[venousPool. updatePh:[venousPool.bicarbonateContent]
 		CO2:XC2PR];
 		
 		// Next section concerns gas exchange in lungs.  PC is fraction of cardiac output perfectly mixed with
@@ -611,11 +611,11 @@ class Human {
 		// Change alveolar gas amounts in accordance with blood gas contents entering from veins
 		// and leaving the lungs.  PC = final amount of total gas at the end of everything.
 		
-		[lungs.setAmountOfOxygen:[lungs.amountOfOxygen] + pc*([venousPool. oxygenContent]-[lungs.oxygenContent])];
+		[lungs.setAmountOfOxygen:[lungs.amountOfOxygen] + pc*([venousPool.oxygenContent]-[lungs.oxygenContent])];
 		[lungs.setAmountOfCO2:[lungs.amountOfCO2] + pc*
-		([venousPool. carbonDioxideContent]-[lungs.carbonDioxideContent])];
+		([venousPool.carbonDioxideContent]-[lungs.carbonDioxideContent])];
 		[lungs.setAmountOfNitrogen:[lungs.amountOfNitrogen] + pc *
-		([tissues.pN2]*0.00127 - [arteries. effluentNitrogenContent])];
+		([tissues.pN2]*0.00127 - [arteries.effluentNitrogenContent])];
 		pc = [lungs.amountOfOxygen]+[lungs.amountOfCO2] + [lungs.amountOfNitrogen];
 		
 		// In next section, FY becomes positive only if more gas goes out than in, in which case FY is later
@@ -714,7 +714,7 @@ class Human {
 		// the contents of O2 and CO2 in pulmonary capillary blood
 		if (qa != 0) pc = qb/qa;
 		//if (qa != 0) [tissues.setRespiratoryQuotient:qb/qa];
-		x = [venousPool. bicarbonateContent] + c3*([lungs.pCO2] - XC2PR);
+		x = [venousPool.bicarbonateContent] + c3*([lungs.pCO2] - XC2PR);
 		if (x < e) NSLog(@"We have a bad fucking arithmetic problem in old Fortran line 930");
 		// NOTE:  I am skipping some detailed arithmetic traps for now but anticipate having to go back!
 		
@@ -776,7 +776,7 @@ class Human {
 		[brain.dampChange:x
 		oldValue:[brain.pH]
 		dampConstant:z]];
-		z = 6.1 + log10(([venousPool. bicarbonateAmount]*c1+([brain.pCO2]-40)*c3)/([brain.pCO2]*0.03));
+		z = 6.1 + log10(([venousPool.bicarbonateAmount]*c1+([brain.pCO2]-40)*c3)/([brain.pCO2]*0.03));
 		xc2 = [brain.pH];
 		[brain.setPH:z];
 		[brain.calcContents:temperature:Hct:Hgb:DPG];
@@ -790,7 +790,7 @@ class Human {
 		// oxygen consumption, etc.) and chemoceptors take account of rapid changes in CO2 as well as O2 and sat.
 		// Fortran Line 1100
 		
-		y = (118 - pj)*0.05 + [brain.C2CHN]*0.05+[venousPool. addBicarb]*.2;
+		y = (118 - pj)*0.05 + [brain.C2CHN]*0.05+[venousPool.addBicarb]*.2;
 		z = y * 0.002;
 		x = (c65 + z - [brain.pH])*1000*y;
 		if (x < 0) x = 0;
@@ -801,7 +801,7 @@ class Human {
 		}
 		z = ([brain.pCO2] - 120) * 0.25;
 		if (z < 0) z = 0;
-		y = (98 - pj)*([arteries. pCO2]-25)*.12;
+		y = (98 - pj)*([arteries.pCO2]-25)*.12;
 		if (y < 0) y = 0;
 		
 		// Index of brain oxygenation lowers and stops breathing eventually if too low
