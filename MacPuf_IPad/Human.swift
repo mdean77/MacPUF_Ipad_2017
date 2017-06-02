@@ -84,7 +84,7 @@ class Human {
 		let c71,c72,c73,c74,c75,c76:Double
 		let ft = 1.0/60.0
 		let e = 0.0000001
-		var x, y, z, pc, u, v, w, pj, s, xu, qa, qb:Double
+		var x, y, z, pc, u, v, w, pj, s, xu, qa, qb, xnew:Double
 		let xx:Double
 		
 		totalSeconds += 1
@@ -348,8 +348,8 @@ class Human {
 		
 		// Compute the tissue pO2 damping appropriately:
 		tissues.pO2 = dampChange(tissues.amountOfOxygen*c31, oldValue: tissues.pO2, dampConstant: c55)
-		x = tissues.amountOfOxygen - 250;
-		if (x > 0 ) {tissues.pO2 + 45 + 0.09*x}	// FORTRAN Line 520
+		x = tissues.amountOfOxygen - 250
+		if x > 0  {tissues.pO2 = 45 + 0.09*x}	// FORTRAN Line 520
 
 		
 		// FORTRAN LINE 530 STARTS HERE
@@ -432,7 +432,7 @@ class Human {
 
 		
 		// Test to see if slow space is supersaturated
-		y = ([tissues.amountSlowNitrogen]*c26 - c11)*c27;
+		y = (tissues.amountSlowNitrogen*c26 - c11)*c27
 		
 		// If supersaturated then augment excessNitrogen and decrease amountSlowNitrogen, or
 		// vice versa if ambient pressure is relatively higher.
@@ -442,65 +442,56 @@ class Human {
 		// have incorporated the changes of 1987 by CJD to dampen the change in bubbles.
 		if(y <= 0) {
 			y = y * 0.3;
-			if ([tissues.excessNitrogen] > 0) {
-				[tissues.setAmountSlowNitrogen: [tissues.amountSlowNitrogen] - y];
+			if (tissues.excessNitrogen > 0) {
+				tissues.amountSlowNitrogen = tissues.amountSlowNitrogen - y
     
-				//[tissues.setBubbles:pow([tissues.excessNitrogen],1.2)*20/barometric];  OLD VERSION
-				
-				[tissues.setBubbles:
-					[tissues.dampChange:pow([tissues.excessNitrogen],1.2)*c23
-					oldValue:[tissues.bubbles]
-					dampConstant:0.005/(12*ft)]];
-				[tissues.setExcessNitrogen: [tissues.excessNitrogen] + y];
+        //[tissues.setBubbles:pow([tissues.excessNitrogen],1.2)*20/barometric];  OLD VERSION
+        tissues.bubbles = dampChange(pow(tissues.excessNitrogen,1.2)*c23, oldValue: tissues.bubbles, dampConstant: 0.005/(12*ft))
+        tissues.excessNitrogen = tissues.excessNitrogen + y
 			}
 		}
-		
-		
+				
 		// Compute the partial pressures
-		[tissues.setSlowN2: [tissues.amountSlowNitrogen]*c26];
-		[tissues.setPN2: [tissues.amountOfNitrogen]*c28];
+        tissues.slowN2 = tissues.amountSlowNitrogen*c26
+        tissues.pN2 = tissues.amountOfNitrogen*c28
 		
 		// Tissue CO2 exchanges.  U is still the metabolism factor calculated earlier
 		// 0.001 converts from cc to litres
-		// PATCHOUT FITNESS ADJUSTMENT
+		// PATCHOUT FITNESS ADJUSTMENT THIS NEEDS TO BE REVISITED AFTER I GET SWIFT TRANSLATION
 		//    [tissues.setAmountOfCO2:[tissues.amountOfCO2] +
 		//        ([heart.fitnessAdjustedOutputPerIteration]*([arteries. effluentCO2Content]-[tissues.carbonDioxideContent])
 		//         + [tissues.respiratoryQuotient]*u)*0.001];
-		[tissues.setAmountOfCO2:[tissues.amountOfCO2] +
-			(0.98*[heart.decilitersPerIteration]*([arteries. effluentCO2Content]-[tissues.carbonDioxideContent])
-			+ [tissues.respiratoryQuotient]*u)*0.001];
+        tissues.amountOfCO2 = tissues.amountOfCO2 +
+			(0.98*[heart.decilitersPerIteration]*(arteries.effluentCO2Content-tissues.carbonDioxideContent) + tissues.respiratoryQuotient*u)*0.001
 		
 		// Compute partial pressures from total CO2 and standard bicarbonate
 		// These methods were completely revised in 1987 to track movement up or down in tissue CO2 and
 		// modify the buffer constant accordingly.
-		
-		
-		c2ref = [tissues.pCO2];
-		[tissues.setPCO2:
-			([tissues.amountOfCO2]*c30 - [tissues.bicarbonateAmount]*c36+c33)*c43];	// FORTRAN Line 5 past 670
+				
+		c2ref = tissues.pCO2
+		tissues.pCO2 = (tissues.amountOfCO2*c30 - tissues.bicarbonateAmount*c36+c33)*c43	// FORTRAN Line 5 past 670
 		
 		// Track movement up or down in tissue CO2 and modify buffer constant accordingly
 		
-		[tissues.setReferenceCO2:
-			[tissues.referenceCO2] + ([tissues.pCO2] - c2ref)];
+		tissues.referenceCO2 = tissues.referenceCO2 + (tissues.pCO2 - c2ref)
+
 		[tissues.setTC3AJ:
 			[tissues.dampChange:0.2*[tissues.referenceCO2]
 			oldValue:[tissues.TC3AJ]
 			dampConstant:c10]];
 		
-		xnew = [heart.fitnessAdjustedOutputPerIteration]*0.1*
-		(([venousPool.bicarbonateContent] -(XC2PR - 40.)*c3)-[tissues.bicarbonateAmount]*c13);
+		xnew = heart.fitnessAdjustedOutputPerIteration * 0.1 * ((venousPool.bicarbonateContent - (XC2PR - 40.0) * c3)-tissues.bicarbonateAmount * c13)
 		//   xnew = 0.98*[heart.decilitersPerIteration]*0.1*
 		//       (([venousPool. bicarbonateContent] -(XC2PR - 40.)*c3)-[tissues.bicarbonateAmount]*c13);
   
 		// 0.4 in line below represents buffers of lactic acid partly inside cells so that displacement of bicarbonate
 		// is less than strict molar equivalence
 		
-		[tissues.setBicarbonateAmount:[tissues.bicarbonateAmount] + xnew - 0.4 * v];
+		tissues.bicarbonateAmount = tissues.bicarbonateAmount  + xnew - 0.4 * v
 		
 		// Decrement pre-delay pool representing total amount on venous side although contents are effectively damped by the
 		// delay line
-		[venousPool. setBicarbonateAmount: ([venousPool. bicarbonateAmount] - xnew)];
+		venousPool.bicarbonateAmount = (venousPool.bicarbonateAmount - xnew)
 		
 		[tissues.setBicarbonateContent:[tissues.bicarbonateAmount]*c13+([tissues.pCO2]-40)*c3 - [tissues.TC3AJ]];
 		if (([tissues.bicarbonateContent] * [tissues.pCO2]) <= 0) NSLog(@"We have a bad fucking arithmetic problem in tissue bicarb!");
@@ -697,21 +688,18 @@ class Human {
 		// compute end expiratory partial pressures
 		y = lungs.amountOfOxygen*u
 		z = lungs.amountOfCO2 * u
-		[lungs.setPO2:
-		[lungs.dampChange:(y+(po2 - y)*v)
-		oldValue:[lungs.pO2]
-		dampConstant:x]];
+		lungs.pO2 = dampChange((y+(lungs.pO2 - y)*v), oldValue: lungs.pO2, dampConstant: x)
+
 		
-		[lungs.setPCO2:
-		[lungs.dampChange:(z+(pc2-z)*v)
-		oldValue:[lungs.pCO2]
-		dampConstant:x]];
-		if ([lungs.pO2] < 0.00001) [lungs.setPO2:0.00001];
-		if ([lungs.pCO2] < 0.00001) [lungs.setPCO2:0.00001];
+		lungs.pCO2 = dampChange((z+(lungs.pCO2-z)*v), oldValue: lungs.pCO2, dampConstant: x)
+
+		lungs.pO2 = max(lungs.pO2,e)
+        lungs.pCO2 = max(lungs.pCO2,e)
+
 		
 		// Determine respiratory quotient (expired) then alveolar gas tensions and then finally
 		// the contents of O2 and CO2 in pulmonary capillary blood
-		if (qa != 0) pc = qb/qa;
+        if qa != 0 {pc = qb/qa}
 		//if (qa != 0) [tissues.setRespiratoryQuotient:qb/qa];
 		x = [venousPool.bicarbonateContent] + c3*([lungs.pCO2] - XC2PR);
         if x < e {print("We have a bad fucking arithmetic problem in old Fortran line 930")}
@@ -720,16 +708,16 @@ class Human {
         // NOTE:  I am skipping some detailed arithmetic traps for now but anticipate having to go back!
 		
 		// Now determine cerebral blood flow adjustments in relation to cardiac output and brain pH (pCO2 sensitive)
-		z = sqrt([heart.effectiveCardiacOutput])*0.5;
-		if (z > 1) z = 1;
+		z = sqrt(heart.effectiveCardiacOutput) * 0.5
+        z = min(z,1)
+
 		// Increase CBF for falling O2 saturation - pj was stored earlier and is 100*sat
-		y = (7.40 - [brain.pH])*([brain.pCO2]*0.0184-[brain.bicarbDeviation]*0.1)*(117-pj)*0.05;
-		if (y > 0) y = 300*pow(y,2);
-		if (y > 4.4) y = 4.4;
-		[brain.setBloodFlow:
-		[brain.dampChange:(y-.12)*42.8*z+[brain.C2CHN]*7
-		oldValue:[brain.bloodFlow]*z
-		dampConstant:c76]];
+		y = (7.40 - brain.pH)*(brain.pCO2*0.0184-brain.bicarbDeviation*0.1)*(117-pj)*0.05
+        if (y > 0) {y = 300*pow(y,2)}
+        y = min(y, 4.4)
+
+		brain.bloodFlow = dampChange((y-0.12)*42.8*z + brain.C2CHN*7, oldValue: brain.bloodFlow*z, dampConstant: c76)
+
 		if ([heart.effectiveCardiacOutput]*2 > [brain.bloodFlow]) [brain.setBloodFlow:[heart.effectiveCardiacOutput]*2];
 		
 		// Compute brain gas amts by metab assuming RQ of 0.98 and allowing for different amts supplied by arterial blood
@@ -738,10 +726,10 @@ class Human {
 		y = [brain.bloodFlow] * c39;
 		x = c41 * ([brain.oxygenationIndex] + 0.25);
 		z = x;
-		if ([brain.pO2] <= 18) {
-			z = x * ([brain.pO2] * 0.11 - 1);
-			x = x*(19-[brain.pO2]);
-			if (z < 0) z = 0;
+		if (brain.pO2 <= 18) {
+			z = x * (brain.pO2 * 0.11 - 1)
+			x = x*(19-brain.pO2)
+                if z < 0 {z = 0}
 		}
 		
 		[brain.setAmountOfOxygen:[brain.amountOfOxygen]+y*([arteries. oxygenContent]-[brain.oxygenContent])
