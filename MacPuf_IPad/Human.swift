@@ -84,11 +84,15 @@ class Human {
         let c71,c72,c73,c74,c75,c76:Double
         let ft = 1.0/60.0
         let e = 0.0000001
-        var x, y, z, pc, u, v, w, pj, s, xu, qa, qb, xnew, po2, pc2, fy, c2ref, fd, xc2 :Double
+        var x, y, z, u, v, w, s, xu, xnew, po2, pc2, c2ref, fd, xc2 :Double
         var iter, nft, n, m : Int
         var pntdly = 1
-        var pl = 0.0
-        
+        let pl = 0.0
+        var pj = 97.0730
+        var fy = 0.0
+        var qa = 249.6541
+        var qb = 199.5492
+        var pc = 0.7993
         let xx:Double
         
         totalSeconds += 1
@@ -416,7 +420,7 @@ class Human {
         //			oldValue:[arteries.lactateConcentration]
         //			dampConstant:[heart.effectiveCardiacOutput]*0.002/ft]];
         
-        arteries.lactateConcentration = dampChange(tissues.lactateAmount*2.0/Double(weight),
+        arteries.lactateConcentration = dampChange(tissues.lactateAmount*c15,
                                                    oldValue:arteries.lactateConcentration,
                                                    dampConstant: heart.effectiveCardiacOutput * 0.002/ft)
         
@@ -612,7 +616,7 @@ class Human {
             }
         }
         else
-        {fy = 0}
+        {fy = 0.0}
         
         if (pl < 0) {
             // CALL BAGER (5, PC, X, C12, MMENU)  LINE 790
@@ -771,7 +775,6 @@ class Human {
         y = (98 - pj)*(arteries.pCO2-25)*0.12
         y = max(y,0)
         
-        
         // Index of brain oxygenation lowers and stops breathing eventually if too low
         u = brain.amountOfOxygen - 10
         u = (u < 0) ? 0 : 1
@@ -825,7 +828,7 @@ class Human {
         if lungs.alveolarVentilationPerIteration <= 0 {lungs.alveolarVentilationPerIteration = e}
         lungs.alveolarMinuteVent = lungs.alveolarVentilationPerIteration*c56
         
-        brain.symptomFlag = (brain.oxygenationIndex>0.3) ? brain.symptomFlag - brain.oxygenationIndex*c59 : brain.symptomFlag - (brain.oxygenationIndex-1)*c58
+        brain.symptomFlag = (brain.oxygenationIndex>0.3) ? brain.symptomFlag - Int(brain.oxygenationIndex*c59) : brain.symptomFlag - Int((brain.oxygenationIndex-1)*c58)
         // CALL DEATH
         
         BARRF = c11
