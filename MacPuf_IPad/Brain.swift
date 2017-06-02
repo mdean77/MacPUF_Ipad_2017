@@ -14,7 +14,7 @@ class Brain: Metabolizer{
 	var bloodFlow = 52.3808
 	var symptomFlag = 0
 	var bicarbDeviation = -0.0678
-	var C2CHN = 0
+	var C2CHN = 0.0
 	
 	override init(){
 		super.init()

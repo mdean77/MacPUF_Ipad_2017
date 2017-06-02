@@ -34,7 +34,7 @@ class Metabolizer {
 		pH = (6.1 + log10((bicarbonateContent)/(pCO2 * 0.03)))
 	}
 	
-	func updatePh(bicarbonate:Double, CO2:Double){
+	func updatePh(_ bicarbonate:Double, CO2:Double){
 		pH = (6.1 + log10((bicarbonate)/(CO2 * 0.03)))
 	}
 	
@@ -42,7 +42,11 @@ class Metabolizer {
 	func sign(_ op1:Double, op2:Double) -> Double {
 		return op2 < 0 ? -abs(op1) : abs(op1)
 	}
-	
+
+    func abs_r(_ f:Double) -> Double{
+        return (f < 0) ? -f : f
+    }
+    
 	// This method replaces the MacPuf GASES subroutine.  It accepts any values of pO2, pCO2 and pH and
 	// works out O2 and CO2 contents and the saturation of O2.  It also needs values for temperature,
 	// hematocrit, hemoglobin and DPG.  Since these values are usually normal I have provided default values
