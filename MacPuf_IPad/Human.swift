@@ -79,13 +79,15 @@ class Human {
         let c21,c22,c23,c24,c25,c26,c27,c28,c29,c30:Double
         let c31,c32,c33,c34,c35,c36,c37,c38,c39,c40:Double
         let c41,c42,c43,c44,c45,c46,c47,c48,c49,c50:Double
-        let c51,c52,c53,c54,c55,c56,c57,c58,c59,c60:Double
-        let c61,c62,c63,c64,c65,c66,c67,c68,c69,c70:Double
-        let c71,c72,c73,c74,c75,c76:Double
+        let c51,c52,c53,c54,c55,c56,c58,c59,c60:Double
+        let c61,c62,c63,c65,c66,c67,c68,c69,c70:Double
+        let c73,c76:Double
         let ft = 1.0/60.0
         let e = 0.0000001
-        var x, y, z, u, v, w, s, xu, xnew, po2, pc2, c2ref, fd, xc2 :Double
-        var iter, nft, n, m : Int
+        var x, y, z, u, v, w, s, xu, xnew,c2ref, fd, xc2 :Double
+        var po2 = 0.0
+        var pc2 = 0.0
+        var nft, n, m : Int
         var pntdly = 1
         let pl = 0.0
         var pj = 97.0730
@@ -173,7 +175,7 @@ class Human {
         
         c55 = 0.2/ft; // 0.1 / ft old value
         c56 = 0.001/ft;
-        c57 = ft * 60;
+        //c57 = ft * 60;
         c58 = ft * 1.27;
         c59 = ft * 0.3;
         c60 = ft * 0.008;
@@ -187,7 +189,7 @@ class Human {
         //c62 = ft * 240000./(lungs.neurogenicVentResponse+300.); // old value
         
         c63 = ft * c7 * 0.12;
-        c64 = 0.01488*Hgb*(tissues.extraFluidVolume+venousPool.venousBloodVolume*0.001)
+        //c64 = 0.01488*Hgb*(tissues.extraFluidVolume+venousPool.venousBloodVolume*0.001)
         c65 = 7.324 - lungs.neurogenicVentResponse*0.00005;
         c66 = c65 - 0.002;
         c67 = lungs.neurogenicVentResponse - 30.0;
@@ -200,14 +202,14 @@ class Human {
         c70 = c29 * 1.3;
         
         // New constants for 2,3 DPG changes and fitness
-        c71 = 21.7 + Double(male)*1.6
-        c72 = ft * 0.002
+        //c71 = 21.7 + Double(male)*1.6
+        //c72 = ft * 0.002
         x = (metabolicRate*1.5 - 150.0)*0.02 - 7
         if (x < -7) {x = -7}
         if (x > 0) {x = 0}
         c73 = fitness + x
-        c74 = 0.000005/ft
-        c75 = 0.002/ft
+        //c74 = 0.000005/ft
+        //c75 = 0.002/ft
         c76 = 0.05/ft
         
         // When user adds bicarb the total amount needs to be spread over the run time, so dose must be
