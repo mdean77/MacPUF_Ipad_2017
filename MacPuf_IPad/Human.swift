@@ -324,7 +324,7 @@ class Human {
         
         // Estimate arterial pCO2 change for later effects on brain chemoceptors
         brain.C2CHN = arteries.pCO2
-        arteries.calculatePressures(arteries.oxygenContent, carbonDioxideContent: arteries.carbonDioxideContent, pO2initial: arteries.pO2, pCO2initial: arteries.pCO2, pH: arteries.pH)
+//			arteries.calculatePressures(arteries.oxygenContent, carbonDioxideContent: arteries.carbonDioxideContent, pO2initial: arteries.pO2, pCO2initial: arteries.pCO2, pH: arteries.pH)
         brain.C2CHN = arteries.pCO2 - brain.C2CHN
         pj = arteries.oxygenSaturation*100
         
@@ -361,7 +361,7 @@ class Human {
         x = tissues.amountOfOxygen - 250
         if x > 0  {tissues.pO2 = 45 + 0.09*x}	// FORTRAN Line 520
         
-        
+			
         // FORTRAN LINE 530 STARTS HERE
         // Lactate metabolism is handled here.  Y represents catabolism related to
         // cardiac output and metabolism
@@ -426,7 +426,7 @@ class Human {
                                                    oldValue:arteries.lactateConcentration,
                                                    dampConstant: heart.effectiveCardiacOutput * 0.002/ft)
         
-        
+
         // FORTRAN LINE 640
         // Next we handle the nitrogen stores in tissues, moving N2 between fast (T)
         // and slow (S) tissue compartments according to partial pressure differences.
