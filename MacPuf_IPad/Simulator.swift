@@ -17,7 +17,7 @@ import Foundation
 class Simulator {
 	
 	var iterations: Int = 60
-	var intervalFactor : Int = 10
+	var intervalFactor : Int = 1
 
 	let human = Human()
 	
@@ -33,7 +33,7 @@ class Simulator {
 		
 		let seconds = human.totalSeconds % 60
 		let minutes = human.totalSeconds / 60
-		var temp = String(repeating: " ", count: 72)
+		var temp = String(repeating: " ", count: 73)
 		
 		let oxygenIndex = temp.index(temp.startIndex, offsetBy:po2)
 		let carbonDioxideIndex = temp.index(temp.startIndex, offsetBy:pco2)

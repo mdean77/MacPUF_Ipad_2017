@@ -98,7 +98,12 @@ class Human {
         let xx:Double
         
         totalSeconds += 1
-        
+			
+			//while cycle == 0  {
+			
+				x = lungs.tidalVolume*lungs.respiratoryRate
+			if x < 1 && ventilator.on() {lungs.alveolarVentilationPerIteration = 0.001}
+			
         c1 = 1000.0/venousPool.venousBloodVolume
         c2 = 100.0/venousPool.venousBloodVolume
         c3 = 0.0203*Hgb
@@ -242,7 +247,7 @@ class Human {
             lungs.pO2 = lungs.amountOfOxygen*xx
             lungs.pCO2 = lungs.amountOfCO2 * xx
         }
-        
+//			}
         // Adjust cardiac output for hypoxia, changes in oxygen consumption, etc. and limit to
         // reasonable values.  This is done by computing some constants and telling the myHeart
         // object to adjust the cardiac parameters.
@@ -324,6 +329,7 @@ class Human {
         
         // Estimate arterial pCO2 change for later effects on brain chemoceptors
         brain.C2CHN = arteries.pCO2
+			arteries.calculatePressures()
 //			arteries.calculatePressures(arteries.oxygenContent, carbonDioxideContent: arteries.carbonDioxideContent, pO2initial: arteries.pO2, pCO2initial: arteries.pCO2, pH: arteries.pH)
         brain.C2CHN = arteries.pCO2 - brain.C2CHN
         pj = arteries.oxygenSaturation*100
@@ -682,10 +688,10 @@ class Human {
         // compute end expiratory partial pressures
         y = lungs.amountOfOxygen*u
         z = lungs.amountOfCO2 * u
-        lungs.pO2 = dampChange((y+(lungs.pO2 - y)*v), oldValue: lungs.pO2, dampConstant: x)
+        lungs.pO2 = dampChange((y+(po2 - y)*v), oldValue: lungs.pO2, dampConstant: x)
         
         
-        lungs.pCO2 = dampChange((z+(lungs.pCO2-z)*v), oldValue: lungs.pCO2, dampConstant: x)
+        lungs.pCO2 = dampChange((z+(pc2-z)*v), oldValue: lungs.pCO2, dampConstant: x)
         
         lungs.pO2 = max(lungs.pO2,e)
         lungs.pCO2 = max(lungs.pCO2,e)

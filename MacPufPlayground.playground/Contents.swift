@@ -3,9 +3,9 @@
 import Foundation
 @testable import MacPUFFramework
 
-//let macpuf = Simulator()
+let macpuf = Simulator()
 //macpuf.simulate()
 
 
-var x = 9.0
-x *= 11
+
+

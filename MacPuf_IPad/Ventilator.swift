@@ -10,7 +10,7 @@ import Foundation
 
 struct Ventilator {
 	var PEEP = 0.0			// positive end expiratory pressure
-	var NARTI = 0				// flag to indicate spontaneous ventilation
+	var NARTI = 1				// flag to indicate spontaneous ventilation
 	// If zero then ventilator is ON
 	
 	// The following variables have not been used but will be used in future.
