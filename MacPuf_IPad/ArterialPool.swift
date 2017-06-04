@@ -182,9 +182,6 @@ class ArterialPool: Metabolizer{
 			trialO2Content = trial.contO2
 			trialCO2Content = trial.contCO2
 			
-			
-			calculateContents(temperature, DPG:DPG, Hct:Hct, Hgb:Hgb)
-			
 			// Calculate the delta, but must be non-zero or we will get division by zero error later
 			deltaOxygen1 = deltaOxygen2
 			deltaOxygen2 = (trialO2Content - oxygenContent) == 0 ?  0.001 : trialO2Content - oxygenContent
