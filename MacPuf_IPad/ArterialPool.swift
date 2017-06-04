@@ -88,6 +88,8 @@ class ArterialPool: Metabolizer{
 		o2Content = (o2Content < 0.001) ? 0.001 : o2Content
 		var co2Content = (cc*h+(1-h)*cp)*2.22
 		co2Content = (co2Content < 0.001) ? 0.001 : co2Content
+
+		
 		
 		return GasValues(pO2: pO2, pCO2: pCO2, contO2: o2Content, contCO2: co2Content)
 

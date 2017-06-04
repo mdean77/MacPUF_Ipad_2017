@@ -22,11 +22,11 @@ class VenousPool: Metabolizer {
 	override init(){
 		super.init()
 		amountOfOxygen = 434.7640
-		pO2 = 40.0                               //Irrelevant I think because will be back calculated
+		//pO2 = 40.0                               //Irrelevant I think because will be back calculated
 		oxygenContent = 14.4921
 		oxygenSaturation = 0.0                     // value made up - needs to be connected to simulator
 		amountOfCO2 = 1543.2665
-		pCO2 = 45.7                              //Irrelevant I think because will be back calculated
+		//pCO2 = 45.7                              //Irrelevant I think because will be back calculated
 		carbonDioxideContent = 51.4422
 		bicarbonateContent = 25.4605
 		bicarbonateAmount = 71.2432

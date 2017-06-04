@@ -99,8 +99,6 @@ class Human {
         
         totalSeconds += 1
 			
-			//while cycle == 0  {
-			
 				x = lungs.tidalVolume*lungs.respiratoryRate
 			if x < 1 && ventilator.on() {lungs.alveolarVentilationPerIteration = 0.001}
 			
@@ -247,6 +245,8 @@ class Human {
             lungs.pO2 = lungs.amountOfOxygen*xx
             lungs.pCO2 = lungs.amountOfCO2 * xx
         }
+
+			
 //			}
         // Adjust cardiac output for hypoxia, changes in oxygen consumption, etc. and limit to
         // reasonable values.  This is done by computing some constants and telling the myHeart
@@ -280,12 +280,13 @@ class Human {
         // fixed right to left shunt
         
         // We also limit venous admixture so it cannot exceed 100
-        heart.effectiveVenousAdmixture = max(((c18/x+c19)*c21 + heart.rightToLeftShunt),100)
+        heart.effectiveVenousAdmixture = min(((c18/x+c19)*c21 + heart.rightToLeftShunt),100)
         
         
         // Arterial CO2 and O2 amounts incremented by mixture of pure venous and pure
         // idealized pulmonary capillary blood, determined by ratios of x and pc.
-        pc = 1.0 - heart.effectiveVenousAdmixture * 0.01
+			x = heart.effectiveVenousAdmixture * 0.01
+        pc = 1.0 - x 
         
         // Nitrogen content is determined in terms of partial pressures assuming a linear dissociation curve
         arteries.amountOfN2 = arteries.amountOfN2 + heart.decilitersPerIteration*((x * tissues.pN2 + pc * (c11 - lungs.pO2 - lungs.pCO2))*0.00127 - arteries.effluentNitrogenContent)
@@ -423,16 +424,11 @@ class Human {
         
         // Reduce the rate of arterial lactate by using a greater damping constant;  this was
         // a change to using c75 in the FORTRAN source instead of c55.
-        //		[arteries.setLactateConcentration:
-        //			[arteries.dampChange:[tissues.lactateAmount]*2./weight
-        //			oldValue:[arteries.lactateConcentration]
-        //			dampConstant:[heart.effectiveCardiacOutput]*0.002/ft]];
         
         arteries.lactateConcentration = dampChange(tissues.lactateAmount*c15,
                                                    oldValue:arteries.lactateConcentration,
                                                    dampConstant: heart.effectiveCardiacOutput * 0.002/ft)
         
-
         // FORTRAN LINE 640
         // Next we handle the nitrogen stores in tissues, moving N2 between fast (T)
         // and slow (S) tissue compartments according to partial pressure differences.
