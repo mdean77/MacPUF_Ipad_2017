@@ -7,11 +7,10 @@
 //
 
 import Foundation
-print("Hello World")
 let macpuf = Simulator()
-macpuf.iterations = 60
-macpuf.intervalFactor = 1
-print("Iterations = \(macpuf.iterations)")
-print("Interval factor = \(macpuf.intervalFactor)")
+macpuf.iterations = 180
+macpuf.intervalFactor = 10
+macpuf.simulate()
+macpuf.human.lungs.FiO2 = 10
 macpuf.simulate()
 
