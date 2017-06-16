@@ -50,25 +50,7 @@
 		ACAB438A1EDB59DC000895AC /* Ventilator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB43721EDB23EC000895AC /* Ventilator.swift */; };
 		ACC99DC81ED9F8B700FEE37F /* Lung.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC99DC71ED9F8B700FEE37F /* Lung.swift */; };
 		ACC99DC91ED9F8B700FEE37F /* Lung.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC99DC71ED9F8B700FEE37F /* Lung.swift */; };
-		ACEC411E1ADB22C0004CE8FD /* libMacPufFrameworks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEC41131ADB22C0004CE8FD /* libMacPufFrameworks.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		AC484DC41AD6A67E009EB609 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AC484DA61AD6A67E009EB609 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AC484DAD1AD6A67E009EB609;
-			remoteInfo = MacPuf_IPad;
-		};
-		ACEC411F1ADB22C0004CE8FD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AC484DA61AD6A67E009EB609 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = ACEC41121ADB22C0004CE8FD;
-			remoteInfo = MacPufFrameworks;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		ACAB43771EDB5991000895AC /* CopyFiles */ = {
@@ -79,15 +61,6 @@
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;
-		};
-		ACEC41111ADB22C0004CE8FD /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -100,7 +73,6 @@
 		AC484DB81AD6A67E009EB609 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC484DBA1AD6A67E009EB609 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AC484DBD1AD6A67E009EB609 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		AC484DC31AD6A67E009EB609 /* MacPuf_IPadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacPuf_IPadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC6481EA1AD83981004FD214 /* Heart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Heart.swift; sourceTree = "<group>"; };
 		AC6481EE1AD97A01004FD214 /* Bag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bag.swift; path = ../Bag.swift; sourceTree = "<group>"; };
 		AC6481F01AD985D1004FD214 /* Human.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Human.swift; sourceTree = "<group>"; };
@@ -170,19 +142,10 @@
 		ACAB437B1EDB5991000895AC /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		ACC99DC71ED9F8B700FEE37F /* Lung.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lung.swift; sourceTree = "<group>"; };
 		ACEC410D1AD9DB99004CE8FD /* MacPufPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MacPufPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		ACEC41131ADB22C0004CE8FD /* libMacPufFrameworks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMacPufFrameworks.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACEC411D1ADB22C0004CE8FD /* MacPufFrameworksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacPufFrameworksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		AC484DAB1AD6A67E009EB609 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AC484DC01AD6A67E009EB609 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -200,21 +163,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ACEC41101ADB22C0004CE8FD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ACEC411A1ADB22C0004CE8FD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ACEC411E1ADB22C0004CE8FD /* libMacPufFrameworks.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,9 +188,6 @@
 			isa = PBXGroup;
 			children = (
 				AC484DAE1AD6A67E009EB609 /* MacPuf_IPad.app */,
-				AC484DC31AD6A67E009EB609 /* MacPuf_IPadTests.xctest */,
-				ACEC41131ADB22C0004CE8FD /* libMacPufFrameworks.a */,
-				ACEC411D1ADB22C0004CE8FD /* MacPufFrameworksTests.xctest */,
 				AC9A42AB1ED85D79006B8C7E /* MacPUFFramework.framework */,
 				ACAB43791EDB5991000895AC /* MacpufConsoleTool */,
 			);
@@ -410,24 +355,6 @@
 			productReference = AC484DAE1AD6A67E009EB609 /* MacPuf_IPad.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AC484DC21AD6A67E009EB609 /* MacPuf_IPadTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AC484DD01AD6A67E009EB609 /* Build configuration list for PBXNativeTarget "MacPuf_IPadTests" */;
-			buildPhases = (
-				AC484DBF1AD6A67E009EB609 /* Sources */,
-				AC484DC01AD6A67E009EB609 /* Frameworks */,
-				AC484DC11AD6A67E009EB609 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AC484DC51AD6A67E009EB609 /* PBXTargetDependency */,
-			);
-			name = MacPuf_IPadTests;
-			productName = MacPuf_IPadTests;
-			productReference = AC484DC31AD6A67E009EB609 /* MacPuf_IPadTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		AC9A42AA1ED85D79006B8C7E /* MacPUFFramework */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC9A42B21ED85D79006B8C7E /* Build configuration list for PBXNativeTarget "MacPUFFramework" */;
@@ -463,41 +390,6 @@
 			productReference = ACAB43791EDB5991000895AC /* MacpufConsoleTool */;
 			productType = "com.apple.product-type.tool";
 		};
-		ACEC41121ADB22C0004CE8FD /* MacPufFrameworks */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ACEC41241ADB22C0004CE8FD /* Build configuration list for PBXNativeTarget "MacPufFrameworks" */;
-			buildPhases = (
-				ACEC410F1ADB22C0004CE8FD /* Sources */,
-				ACEC41101ADB22C0004CE8FD /* Frameworks */,
-				ACEC41111ADB22C0004CE8FD /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MacPufFrameworks;
-			productName = MacPufFrameworks;
-			productReference = ACEC41131ADB22C0004CE8FD /* libMacPufFrameworks.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		ACEC411C1ADB22C0004CE8FD /* MacPufFrameworksTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ACEC41271ADB22C0004CE8FD /* Build configuration list for PBXNativeTarget "MacPufFrameworksTests" */;
-			buildPhases = (
-				ACEC41191ADB22C0004CE8FD /* Sources */,
-				ACEC411A1ADB22C0004CE8FD /* Frameworks */,
-				ACEC411B1ADB22C0004CE8FD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				ACEC41201ADB22C0004CE8FD /* PBXTargetDependency */,
-			);
-			name = MacPufFrameworksTests;
-			productName = MacPufFrameworksTests;
-			productReference = ACEC411D1ADB22C0004CE8FD /* MacPufFrameworksTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -512,11 +404,6 @@
 						CreatedOnToolsVersion = 6.3;
 						LastSwiftMigration = 0900;
 					};
-					AC484DC21AD6A67E009EB609 = {
-						CreatedOnToolsVersion = 6.3;
-						LastSwiftMigration = 0900;
-						TestTargetID = AC484DAD1AD6A67E009EB609;
-					};
 					AC9A42AA1ED85D79006B8C7E = {
 						CreatedOnToolsVersion = 8.2.1;
 						LastSwiftMigration = 0900;
@@ -526,12 +413,6 @@
 						CreatedOnToolsVersion = 8.3.2;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
-					};
-					ACEC41121ADB22C0004CE8FD = {
-						CreatedOnToolsVersion = 6.3;
-					};
-					ACEC411C1ADB22C0004CE8FD = {
-						CreatedOnToolsVersion = 6.3;
 					};
 				};
 			};
@@ -549,9 +430,6 @@
 			projectRoot = "";
 			targets = (
 				AC484DAD1AD6A67E009EB609 /* MacPuf_IPad */,
-				AC484DC21AD6A67E009EB609 /* MacPuf_IPadTests */,
-				ACEC41121ADB22C0004CE8FD /* MacPufFrameworks */,
-				ACEC411C1ADB22C0004CE8FD /* MacPufFrameworksTests */,
 				AC9A42AA1ED85D79006B8C7E /* MacPUFFramework */,
 				ACAB43781EDB5991000895AC /* MacpufConsoleTool */,
 			);
@@ -572,21 +450,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AC484DC11AD6A67E009EB609 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		AC9A42A91ED85D79006B8C7E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ACEC411B1ADB22C0004CE8FD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -613,13 +477,6 @@
 				ACC99DC81ED9F8B700FEE37F /* Lung.swift in Sources */,
 				AC6481EF1AD97A01004FD214 /* Bag.swift in Sources */,
 				ACAA9F741AD6ADBD003390CA /* ArterialPool.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AC484DBF1AD6A67E009EB609 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,34 +517,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ACEC410F1ADB22C0004CE8FD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ACEC41191ADB22C0004CE8FD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		AC484DC51AD6A67E009EB609 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AC484DAD1AD6A67E009EB609 /* MacPuf_IPad */;
-			targetProxy = AC484DC41AD6A67E009EB609 /* PBXContainerItemProxy */;
-		};
-		ACEC41201ADB22C0004CE8FD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = ACEC41121ADB22C0004CE8FD /* MacPufFrameworks */;
-			targetProxy = ACEC411F1ADB22C0004CE8FD /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AC484DB71AD6A67E009EB609 /* Main.storyboard */ = {
@@ -712,7 +542,7 @@
 		AC484DCB1AD6A67E009EB609 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -739,7 +569,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -754,11 +584,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -766,7 +598,7 @@
 		AC484DCC1AD6A67E009EB609 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -793,7 +625,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -801,10 +633,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -833,44 +667,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
-		};
-		AC484DD11AD6A67E009EB609 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MacPuf_IPadTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = "J.-Michael-Dean.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacPuf_IPad.app/MacPuf_IPad";
-			};
-			name = Debug;
-		};
-		AC484DD21AD6A67E009EB609 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = "";
-				INFOPLIST_FILE = MacPuf_IPadTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = "J.-Michael-Dean.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacPuf_IPad.app/MacPuf_IPad";
 			};
 			name = Release;
 		};
@@ -959,58 +755,6 @@
 			};
 			name = Release;
 		};
-		ACEC41251ADB22C0004CE8FD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		ACEC41261ADB22C0004CE8FD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		ACEC41281ADB22C0004CE8FD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MacPufFrameworksTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		ACEC41291ADB22C0004CE8FD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MacPufFrameworksTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1032,15 +776,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AC484DD01AD6A67E009EB609 /* Build configuration list for PBXNativeTarget "MacPuf_IPadTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AC484DD11AD6A67E009EB609 /* Debug */,
-				AC484DD21AD6A67E009EB609 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		AC9A42B21ED85D79006B8C7E /* Build configuration list for PBXNativeTarget "MacPUFFramework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1055,24 +790,6 @@
 			buildConfigurations = (
 				ACAB437E1EDB5991000895AC /* Debug */,
 				ACAB437F1EDB5991000895AC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		ACEC41241ADB22C0004CE8FD /* Build configuration list for PBXNativeTarget "MacPufFrameworks" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ACEC41251ADB22C0004CE8FD /* Debug */,
-				ACEC41261ADB22C0004CE8FD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		ACEC41271ADB22C0004CE8FD /* Build configuration list for PBXNativeTarget "MacPufFrameworksTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ACEC41281ADB22C0004CE8FD /* Debug */,
-				ACEC41291ADB22C0004CE8FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
