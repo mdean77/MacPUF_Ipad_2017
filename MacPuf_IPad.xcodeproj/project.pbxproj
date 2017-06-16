@@ -12,7 +12,6 @@
 		AC484DB91AD6A67E009EB609 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC484DB71AD6A67E009EB609 /* Main.storyboard */; };
 		AC484DBB1AD6A67E009EB609 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC484DBA1AD6A67E009EB609 /* Images.xcassets */; };
 		AC484DBE1AD6A67E009EB609 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC484DBC1AD6A67E009EB609 /* LaunchScreen.xib */; };
-		AC484DCA1AD6A67E009EB609 /* MacPuf_IPadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC484DC91AD6A67E009EB609 /* MacPuf_IPadTests.swift */; };
 		AC6481EB1AD83981004FD214 /* Heart.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6481EA1AD83981004FD214 /* Heart.swift */; };
 		AC6481EF1AD97A01004FD214 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6481EE1AD97A01004FD214 /* Bag.swift */; };
 		AC6481F11AD985D1004FD214 /* Human.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6481F01AD985D1004FD214 /* Human.swift */; };
@@ -102,8 +101,6 @@
 		AC484DBA1AD6A67E009EB609 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AC484DBD1AD6A67E009EB609 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		AC484DC31AD6A67E009EB609 /* MacPuf_IPadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacPuf_IPadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC484DC81AD6A67E009EB609 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AC484DC91AD6A67E009EB609 /* MacPuf_IPadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacPuf_IPadTests.swift; sourceTree = "<group>"; };
 		AC6481EA1AD83981004FD214 /* Heart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Heart.swift; sourceTree = "<group>"; };
 		AC6481EE1AD97A01004FD214 /* Bag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bag.swift; path = ../Bag.swift; sourceTree = "<group>"; };
 		AC6481F01AD985D1004FD214 /* Human.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Human.swift; sourceTree = "<group>"; };
@@ -172,7 +169,7 @@
 		ACAB43791EDB5991000895AC /* MacpufConsoleTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MacpufConsoleTool; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACAB437B1EDB5991000895AC /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		ACC99DC71ED9F8B700FEE37F /* Lung.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lung.swift; sourceTree = "<group>"; };
-		ACEC410D1AD9DB99004CE8FD /* MacPufPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MacPufPlayground.playground; sourceTree = "<group>"; };
+		ACEC410D1AD9DB99004CE8FD /* MacPufPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MacPufPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		ACEC41131ADB22C0004CE8FD /* libMacPufFrameworks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMacPufFrameworks.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACEC411D1ADB22C0004CE8FD /* MacPufFrameworksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacPufFrameworksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -233,7 +230,6 @@
 				ACAA9F4F1AD6A8DE003390CA /* FORTRAN Source */,
 				AC85B28F1EDB135400FF1178 /* FORTRAN Executable */,
 				AC484DB01AD6A67E009EB609 /* MacPuf_IPad */,
-				AC484DC61AD6A67E009EB609 /* MacPuf_IPadTests */,
 				AC9A42AC1ED85D79006B8C7E /* MacPUFFramework */,
 				ACAB437A1EDB5991000895AC /* MacpufConsoleTool */,
 				AC484DAF1AD6A67E009EB609 /* Products */,
@@ -282,23 +278,6 @@
 			isa = PBXGroup;
 			children = (
 				AC484DB21AD6A67E009EB609 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		AC484DC61AD6A67E009EB609 /* MacPuf_IPadTests */ = {
-			isa = PBXGroup;
-			children = (
-				AC484DC91AD6A67E009EB609 /* MacPuf_IPadTests.swift */,
-				AC484DC71AD6A67E009EB609 /* Supporting Files */,
-			);
-			path = MacPuf_IPadTests;
-			sourceTree = "<group>";
-		};
-		AC484DC71AD6A67E009EB609 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				AC484DC81AD6A67E009EB609 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -526,24 +505,26 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "J Michael Dean";
 				TargetAttributes = {
 					AC484DAD1AD6A67E009EB609 = {
 						CreatedOnToolsVersion = 6.3;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 0900;
 					};
 					AC484DC21AD6A67E009EB609 = {
 						CreatedOnToolsVersion = 6.3;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 0900;
 						TestTargetID = AC484DAD1AD6A67E009EB609;
 					};
 					AC9A42AA1ED85D79006B8C7E = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					ACAB43781EDB5991000895AC = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					ACEC41121ADB22C0004CE8FD = {
@@ -639,7 +620,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC484DCA1AD6A67E009EB609 /* MacPuf_IPadTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -737,14 +717,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -785,14 +771,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -826,7 +818,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "J.-Michael-Dean.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -838,7 +831,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "J.-Michael-Dean.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -852,10 +846,13 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = MacPuf_IPadTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "J.-Michael-Dean.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacPuf_IPad.app/MacPuf_IPad";
 			};
 			name = Debug;
@@ -866,10 +863,13 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = MacPuf_IPadTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "J.-Michael-Dean.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacPuf_IPad.app/MacPuf_IPad";
 			};
 			name = Release;
@@ -894,7 +894,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -919,7 +920,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = edu.utah.dcc.dean.MacPUFFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -937,7 +939,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -951,7 +954,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
