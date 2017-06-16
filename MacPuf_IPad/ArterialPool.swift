@@ -45,7 +45,8 @@ class ArterialPool: Metabolizer{
 	}
 	
 	func description() -> String{
-	return String(format:"\nArterial %8.1f%8.1f%8.1f%8.1f%8.0f%8.0f%7.3f%6.1f",pO2, pCO2,oxygenContent,carbonDioxideContent,amountOfOxygen,amountOfCO2,pH,bicarbonateContent)
+	return String(format:"\nArterial %8.1f%8.1f%8.1f%8.1f%8.0f%8.0f%7.3f%6.1f",
+                  pO2, pCO2,oxygenContent,carbonDioxideContent,amountOfOxygen,amountOfCO2,pH,bicarbonateContent)
 	}
 	
 	
@@ -88,9 +89,7 @@ class ArterialPool: Metabolizer{
 		o2Content = (o2Content < 0.001) ? 0.001 : o2Content
 		var co2Content = (cc*h+(1-h)*cp)*2.22
 		co2Content = (co2Content < 0.001) ? 0.001 : co2Content
-
-		
-		
+        
 		return GasValues(pO2: pO2, pCO2: pCO2, contO2: o2Content, contCO2: co2Content)
 
 	}
@@ -225,14 +224,7 @@ class ArterialPool: Metabolizer{
 					D2 = (guessCarbonDioxide2 == guessCarbonDioxide1) ? sign(D2Z, op2: -deltaCarbonDioxide2) : (guessCarbonDioxide2 - guessCarbonDioxide1)*abs(deltaCarbonDioxide2)/abs(deltaCarbonDioxide2 - deltaCarbonDioxide1);
 				}
 			}
-			
 		} while (ich1 + ich2) != 0
-		
 		return
 	}
-
-	
-
-	
-	
 }
