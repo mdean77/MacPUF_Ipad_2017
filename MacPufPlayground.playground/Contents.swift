@@ -4,8 +4,13 @@ import Foundation
 @testable import MacPUFFramework
 
 let macpuf = Simulator()
-//macpuf.simulate()
+macpuf.simulate()
 
+
+
+
+
+var mike = "Mike"
 
 
 
