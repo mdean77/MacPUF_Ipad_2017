@@ -137,3 +137,17 @@ I probably should make this a subroutine but right now it is buried in simulate,
 I have fixed the initial array of reference values in MyDocument so that simulator does not indicate changes of variables at the beginning of the run.  This array is only decorative but is the method for changing values, etc.  It is not elegant to have values in two locations but there are only 30 and are now corrected.  Someday I may want to improve this.
 
 I still need to have ventilator changes reflected immediately in the reference array - it is reflected after a run, but not just after accepting ventilator settings.  I also need the settings to be entered into the textview transcript similar to the changed variables routine.  Perhaps I can call that routine in some fashion.
+
+June 2017 (14 YEARS LATER)
+
+Many years have gone by but I continue to maintain interest in this computer simulation.  I have recently been working on converting the code from Objective C to Swift, and this has now largely been accomplished.  I also have decided to bite the bullet and try to build this intentionally for iOS, as well as building a console app that might be able to run in Linux.
+
+There are several updates that I am recording here so I remember them when I start over again in another 14 years.  First, the FORTRAN code is all mixed up as I started with Dickinson code but then have adopted SOME of the code from Havenith, who tried to incorporate HR and stroke volume into the model.  I did not do this yet, but some code alterations have been made.
+
+CJ Dickinson died in 2015 so there is obviously no recourse to him.  Havenith wrote two theses and these are included on my disk - I will try to remember to drag them into this project under FORTRAN Source so that I do not lose them.  There is a FORTRAN executeable that was written directly from Havenith's code, not mine, and it incorporates the HR, SV and RQ changes, etc. that he was studying.  This is in a folder called FORTRAN Executable.  THIS IS THE ONLY FULLY EXECUTABLE VERSION OF THE NEARLY ORIGINAL MACPUF INCLUDING CREATING PRESET OR CUSTOM PATIENTS, ETC.
+
+I have made some progress on the MVC architecture.  I have separated the model code so that it no longer contains anything relating to printing to the console or printing anywhere;  that is, there are no display related components in the model.  This is why I can now run the model from a command line script, as I create a simulator object and then tell it to simulate.  The simulator object itself is really the controller, and it has all the print commands, etc. that are relevant.  This means that when I get the model finally debugged, it will work the same regardless of output.  I am planning to create a command line version, an iOS version, and then I will go back and do a MacOS version, all with the same model.
+
+I also learned how to set up playgrounds to test my code;  I had to create a framework with the SWIFT code, and then in the playgrounds simply import the module as @testable - this flag makes everything inside the frameworks public, which would otherwise not be the case.
+
+Finally, I have (today) updated the code to SWIFT 4.0 and I am targeting the most recent iOS version.  Might as well use the latest stuff, since I will probably not finish this project for another twenty years.
